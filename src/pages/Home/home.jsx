@@ -1,10 +1,12 @@
 import React from "react";
 import "./home.css";
 import profileImg from "../../images/Photo.png";
+import Navbar from "../NavBar/Navbar";
 
 const Home = () => {
   return (
     <section className="home">
+      <Navbar />
       <div className="intro">
         <h1>Salut, je suis <span className="name">Nanja Randriamalala</span></h1>
         <h2>Développeur Web Full Stack</h2>
