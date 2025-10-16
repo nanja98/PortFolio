@@ -1,7 +1,7 @@
 import React from "react";
-import "./home.css";
-import profileImg from "../../images/Photo.png";
-import Navbar from "../NavBar/Navbar";
+import "../styles/Accueil.css";
+import profileImg from "../images/Photo.png";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
           J’aime concevoir des interfaces intuitives et développer des solutions efficaces.
         </p>
         <div className="buttons">
-          <a href="#projects" className="btn">Voir mes projets</a>
+          <a href="/projects" className="btn">Voir mes projets</a>
           <a href="#contact" className="btn btn-secondary">Me contacter</a>
         </div>
       </div>

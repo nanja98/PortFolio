@@ -1,0 +1,109 @@
+.projects {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  min-height: 100vh;
+  padding: 120px 10%;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  margin-bottom: 50px;
+}
+
+/* === GRID === */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  justify-content: center;
+}
+
+.project-card {
+  background: #1e293b;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+}
+
+.project-card img {
+  width: 50%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.project-info h3 {
+  font-size: 1.3rem;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* === BOUTON === */
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  background: #38bdf8;
+  color: #0f172a;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .projects {
+    padding: 100px 6%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .project-card img {
+    height: 180px;
+  }
+
+  .project-info {
+    text-align: center;
+  }
+}

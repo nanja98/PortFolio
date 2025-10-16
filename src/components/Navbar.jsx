@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Navbar.css";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,8 +8,8 @@ const Navbar = () => {
     <header className="navbar">
       <div className="logo">Nanja<span>.</span></div>
       <nav className={menuOpen ? "nav open" : "nav"}>
-        <a href="#home">Accueil</a>
-        <a href="#projects">Projets</a>
+        <a href="/home">Accueil</a>
+        <a href="/projects">Projets</a>
         <a href="#about">À propos</a>
         <a href="#contact">Contact</a>
       </nav>
