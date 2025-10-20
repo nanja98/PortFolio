@@ -16,7 +16,7 @@ const Home = () => {
         </p>
         <div className="buttons">
           <a href="/projects" className="btn">Voir mes projets</a>
-          <a href="#contact" className="btn btn-secondary">Me contacter</a>
+          <a href="/contact" className="btn btn-secondary">Me contacter</a>
         </div>
       </div>
 

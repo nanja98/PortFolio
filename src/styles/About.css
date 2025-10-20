@@ -1,0 +1,131 @@
+.about {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  min-height: 100vh;
+  padding: 120px 10%;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === TEXTE === */
+.about-text {
+  flex: 1;
+  min-width: 320px;
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+.highlight {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* === COMPÉTENCES === */
+.skills h2 {
+  font-size: 1.5rem;
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  background: rgba(56, 189, 248, 0.1);
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.skills li:hover {
+  background: rgba(56, 189, 248, 0.2);
+}
+
+/* === IMAGE === */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 280px;
+}
+
+.about-image img {
+  width: 300px;
+  max-width: 80%;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+/* === BOUTON === */
+.btn {
+  display: inline-block;
+  background: #38bdf8;
+  color: #0f172a;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-image img {
+    width: 250px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .skills h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-image img {
+    width: 200px;
+  }
+}
