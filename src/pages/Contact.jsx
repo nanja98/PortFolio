@@ -28,7 +28,7 @@ const Contact = () => {
           <h1>Contactez-moi</h1>
           <p>
             N’hésitez pas à me contacter pour une collaboration, une mission ou
-            simplement pour échanger sur un projet web.
+            simplement pour échanger sur un projet web. 
           </p>
 
           <div className="contact-details">
