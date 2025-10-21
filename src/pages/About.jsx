@@ -41,7 +41,7 @@ const About = () => {
         </div>
 
         <div className="about-image">
-             <img src={Profile} alt="Portrait de Nanja Randriamalala" />
+             <img src={Profile} alt="Nanja Randriamalala" />
         </div>
       </div>
     </section>
