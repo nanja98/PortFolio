@@ -1,0 +1,80 @@
+{
+  "name": "Nanja Randriamalala",
+  "degree": "Ingénieur en Informatique & Télécommunications (Master 2)",
+  "school": "ISPM – Antananarivo",
+  "bio": [
+    "Je suis <strong>Nanja Randriamalala</strong>, <strong>Ingénieur Développeur Web Full Stack</strong> diplômé en Master 2 Informatique et Télécommunications à l'ISPM. Combinant une solide rigueur d'ingénierie et une passion pour le web moderne, je conçois des architectures logicielles fiables, évolutives et hautement sécurisées.",
+    "Ma double compétence en <strong>développement Full Stack</strong> et en <strong>sécurité des applications web (OWASP Top 10)</strong> me permet de construire des solutions complètes prêtes pour la production, prémunies contre les vulnérabilités courantes (injection SQL, XSS, CSRF, attaques de force brute, failles d'authentification).",
+    "Entre <strong>2025 et 2026</strong>, j'ai notamment collaboré en freelance avec des <strong>clients internationaux</strong> (Europe, France) sur des missions complexes d'audit de sécurité applicative, de durcissement d'API REST et de mise en conformité OWASP ASVS pour des plateformes SaaS et e-commerce à fort trafic."
+  ],
+  "securityExpertise": {
+    "title": "Sécurisation & Conformité OWASP",
+    "subtitle": "Directement intégrée au cycle de développement pour garantir des applications étanches.",
+    "pillars": [
+      {
+        "icon": "🛡️",
+        "title": "Protection OWASP Top 10",
+        "description": "Prévention active contre les failles d'injection SQL (ORM Prisma/SQL préparé), Cross-Site Scripting (XSS), et Cross-Site Request Forgery (CSRF tokens & cookies SameSite)."
+      },
+      {
+        "icon": "🔐",
+        "title": "Authentification & Gestion des Accès",
+        "description": "Implémentation de protocoles JWT sécurisés (rotation de tokens, cookies HTTP-Only), hachage fort (bcrypt/argon2) et contrôle d'accès basé sur les rôles (RBAC)."
+      },
+      {
+        "icon": "⚡",
+        "title": "Sécurité Réseau & Serveur",
+        "description": "Configuration de Security Headers (Helmet.js, Content Security Policy, HSTS), limitation de débit (Rate-Limiting pour contrer le Brute Force) et assainissement strict des entrées."
+      },
+      {
+        "icon": "🔍",
+        "title": "Audit & Code Review",
+        "description": "Analyse de vulnérabilités, revue de code axée sur la sécurité et tests d'intrusion applicatifs pour clients internationaux."
+      }
+    ]
+  },
+  "skills": [
+    {
+      "category": "Frontend Architecture",
+      "items": ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5 / CSS3", "State Management", "Figma UI/UX"]
+    },
+    {
+      "category": "Backend & APIs",
+      "items": ["Node.js", "Express.js", "Prisma ORM", "API RESTful", "Microservices", "JWT & OAuth2"]
+    },
+    {
+      "category": "Sécurité Web (OWASP)",
+      "items": ["OWASP Top 10", "Audit de code", "Sanitisation des données", "CSRF / XSS Shield", "Rate-Limiting", "Security Headers"]
+    },
+    {
+      "category": "Bases de données & DevOps",
+      "items": ["MySQL", "PostgreSQL", "Git / GitHub", "Docker", "Linux SysAdmin", "Postman / Thunder Client"]
+    }
+  ],
+  "experiences": [
+    {
+      "year": "2025 – 2026",
+      "role": "Ingénieur Freelance – Audit & Sécurisation Web (International)",
+      "org": "Clients Internationaux (Europe / Remote)",
+      "description": "Audits de sécurité applicative et revue de code selon le référentiel OWASP ASVS pour des plateformes SaaS et e-commerce internationales. Élimination des vulnérabilités critiques (XSS, CSRF, Injections SQL), sécurisation des flux d'authentification JWT (cookies HTTP-Only SameSite=Strict), et déploiement de politiques de sécurité avancées (Content Security Policy, Rate-Limiting, Helmet.js)."
+    },
+    {
+      "year": "2024",
+      "role": "Ingénieur Développeur Full Stack",
+      "org": "UCREF – Ministère de l'Environnement",
+      "description": "Conception et développement d'une application sécurisée de gestion de données environnementales. Réduction des vulnérabilités applicatives et mise en conformité OWASP."
+    },
+    {
+      "year": "2023",
+      "role": "Ingénieur Développeur Web",
+      "org": "CIDST Tsimbazaza",
+      "description": "Développement d'un système d'archivage scientifique sécurisé avec contrôle d'accès par rôles (RBAC) et chiffrement des données sensibles."
+    },
+    {
+      "year": "2022",
+      "role": "Développeur Web Freelance",
+      "org": "Projets Indépendants",
+      "description": "Conception et développement d'applications web responsives et plateformes interactives (réservations, vitrines)."
+    }
+  ]
+}

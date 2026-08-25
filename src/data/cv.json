@@ -1,0 +1,85 @@
+{
+  "name": "Nanja Randriamalala",
+  "title": "Ingénieur Développeur Web Full Stack | Expert Sécurité OWASP",
+  "email": "nanjarandriamalala98@gmail.com",
+  "phone": "+261 34 54 264 33",
+  "location": "Antananarivo, Madagascar",
+  "linkedin": "linkedin.com/in/nanja-randriamalala",
+  "github": "github.com/nanja98",
+  "summary": "Ingénieur en Informatique et Télécommunications diplômé (Master 2 ISPM). Spécialisé dans le développement d'applications Web Full Stack (React.js, Node.js, Express, MySQL/Prisma) et la sécurisation applicative conforme aux recommandations OWASP Top 10. Expérience solide acquise auprès de projets d'envergure et de clients internationaux en audit de code, durcissement d'API REST et architecture logicielle sécurisée.",
+  "experience": [
+    {
+      "role": "Ingénieur Freelance – Audit & Sécurisation Applicative Web",
+      "org": "Clients Internationaux (Europe / Remote)",
+      "period": "2025 – 2026",
+      "location": "Remote International",
+      "bullets": [
+        "Réalisation d'audits de sécurité applicative et revues de code approfondies basés sur le standard OWASP ASVS pour des plateformes SaaS et e-commerce internationales",
+        "Remédiation complète des vulnérabilités applicatives critiques : élimination des failles Cross-Site Scripting (XSS), d'injections SQL/NoSQL et d'attaques Cross-Site Request Forgery (CSRF)",
+        "Refonte des mécanismes d'authentification : mise en place de tokens JWT sécurisés avec rotation de refresh tokens et stockage dans des cookies HTTP-Only SameSite=Strict",
+        "Durcissement réseau et serveur applicatif : intégration d'en-têtes HTTP de sécurité (Content Security Policy, Helmet.js, HSTS) et protection contre le brute force par limitation de débit (Rate-Limiting)",
+        "Rédaction de rapports d'audit techniques et sensibilisation des équipes de développement internationales aux bonnes pratiques de sécurité"
+      ]
+    },
+    {
+      "role": "Ingénieur Développeur Full Stack & Sécurité",
+      "org": "UCREF – Ministère de l'Environnement",
+      "period": "2024",
+      "location": "Antananarivo, Madagascar",
+      "bullets": [
+        "Conception et développement de l'architecture logicielle complète d'une application de gestion de données environnementales",
+        "Mise en conformité OWASP Top 10 : protection contre les injections SQL via Prisma ORM, sanitisation anti-XSS et jetons anti-CSRF",
+        "Modélisation et gestion avancée de la base de données MySQL avec contrôle d'intégrité et transactions",
+        "Mise en place d'une API REST sécurisée avec authentification JWT durcie (refresh tokens, cookies SameSite HTTP-Only)"
+      ]
+    },
+    {
+      "role": "Ingénieur Développeur Web",
+      "org": "CIDST Tsimbazaza – Centre de Documentation Scientifique",
+      "period": "2023",
+      "location": "Antananarivo, Madagascar",
+      "bullets": [
+        "Développement d'une application web de numérisation et consultation de publications scientifiques",
+        "Implémentation d'un contrôle d'accès basé sur les rôles (RBAC) pour restreindre les privilèges d'administration",
+        "Mise en place de moteurs de recherche textuels rapides et sécurisés contre les injections",
+        "Revue de code et audit de sécurité applicative préalable à la mise en production"
+      ]
+    },
+    {
+      "role": "Développeur Web Freelance",
+      "org": "Projets Indépendants",
+      "period": "2022",
+      "location": "Madagascar",
+      "bullets": [
+        "Conception et intégration responsive d'applications web (React.js, HTML5, CSS3, JavaScript ES6+)",
+        "Création d'une plateforme web interactive de réservation de voyages avec géolocalisation et filtres dynamiques",
+        "Optimisation des performances web, du référencement (SEO) et de la compatibilité multi-navigateurs"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Diplôme d'Ingénieur en Informatique et Télécommunications (Master 2)",
+      "school": "ISPM (Institut Supérieur Polytechnique de Madagascar)",
+      "period": "2022 – 2024",
+      "location": "Antananarivo, Madagascar"
+    },
+    {
+      "degree": "Licence en Informatique",
+      "school": "ISPM (Institut Supérieur Polytechnique de Madagascar)",
+      "period": "2019 – 2022",
+      "location": "Antananarivo, Madagascar"
+    }
+  ],
+  "skills": {
+    "Ingénierie & Frontend": ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5 / CSS3", "State Management", "Figma UI/UX"],
+    "Backend & APIs": ["Node.js", "Express.js", "Prisma ORM", "API RESTful", "Microservices", "JWT / OAuth2"],
+    "Sécurité Web (OWASP)": ["OWASP Top 10 Mitigation", "Anti-Injection SQL", "Protection XSS & CSRF", "Rate Limiting", "Security Headers (Helmet)", "RBAC"],
+    "Bases de données & Ops": ["MySQL", "PostgreSQL", "Git / GitHub", "Docker", "Linux SysAdmin", "Postman / Thunder Client"]
+  },
+  "languages": [
+    { "lang": "Malgache", "level": "Langue maternelle" },
+    { "lang": "Français", "level": "Courant (professionnel)" },
+    { "lang": "Anglais", "level": "Intermédiaire (technique)" }
+  ]
+}
