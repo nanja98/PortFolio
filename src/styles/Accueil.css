@@ -103,6 +103,7 @@
   overflow: hidden;
   background: var(--bg-surface);
   border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
 }
 
 .profile-image {
@@ -129,6 +130,7 @@
   border-radius: var(--radius);
   padding: 14px 10px;
   text-align: center;
+  box-shadow: var(--card-shadow);
 }
 
 .metric-value {
