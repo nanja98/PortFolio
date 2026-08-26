@@ -24,10 +24,10 @@ const Home = () => {
       <section className="hero-section">
         <div className="container">
           
-          {/* Main Hero Card */}
+          {/* Main Hero Grid */}
           <div className="hero-grid">
             
-            {/* Left Content */}
+            {/* Left Main Content */}
             <div className="hero-main">
               <div className="hero-status reveal">
                 <span className="status-indicator" />
@@ -93,25 +93,25 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Profile Badge Card & Quick Stats */}
+            {/* Right Side: Prominent Hero Photo Showcase */}
             <div className="hero-aside reveal d2">
-              <div className="engineer-profile-card">
-                <div className="profile-avatar-container">
-                  <img src={profileImg} alt={name} className="profile-avatar-image" />
-                  <div className="avatar-status-ring" />
+              <div className="home-portrait-card">
+                <div className="portrait-image-wrapper">
+                  <img src={profileImg} alt={name} className="portrait-image" />
                 </div>
                 
-                <div className="profile-card-details">
-                  <div className="profile-card-name">{name}</div>
-                  <div className="profile-card-role">
+                <div className="portrait-card-footer">
+                  <div className="portrait-meta-name">{name}</div>
+                  <div className="portrait-meta-title">
                     {lang === "fr" ? "Ingénieur Web & Sécurité" : "Web & Security Engineer"}
                   </div>
-                  <div className="profile-card-badge">
-                    <span>✓</span> {lang === "fr" ? "Diplômé ISPM (M2)" : "ISPM Graduate (M2)"}
-                  </div>
+                  <span className="portrait-verified-chip">
+                    ✓ {lang === "fr" ? "Diplômé ISPM (Master 2)" : "ISPM Graduate (Master 2)"}
+                  </span>
                 </div>
               </div>
 
+              {/* Metrics Grid */}
               <div className="metrics-grid">
                 {stats.map((stat, idx) => (
                   <div key={idx} className="metric-card">
