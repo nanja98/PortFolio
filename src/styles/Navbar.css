@@ -5,7 +5,7 @@
   right: 0;
   z-index: 1000;
   padding: 16px 0;
-  background: rgba(11, 12, 14, 0.75);
+  background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -14,7 +14,7 @@
 
 .navbar.scrolled {
   padding: 12px 0;
-  background: rgba(11, 12, 14, 0.92);
+  background: var(--nav-bg-scrolled);
   border-bottom-color: var(--border);
 }
 
@@ -73,6 +73,34 @@
   background: var(--bg-surface);
 }
 
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  background: var(--bg-muted);
+}
+
+.theme-toggle-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* CV Button */
 .nav-cv-btn {
   display: inline-flex;
   align-items: center;
@@ -153,7 +181,7 @@
     font-size: 16px;
     padding: 12px;
   }
-  .nav-cv-btn {
+  .theme-toggle-btn, .nav-cv-btn {
     justify-content: center;
     padding: 12px;
     font-size: 14px;

@@ -6,8 +6,8 @@
   padding: 0;
 }
 
-:root {
-  /* Minimalist Technical Slate Theme (Linear/Vercel Aesthetic) */
+/* ── Dark Theme (Default) ── */
+:root, [data-theme="dark"] {
   --bg: #0b0c0e;
   --bg-surface: #131418;
   --bg-muted: #1a1c23;
@@ -21,14 +21,50 @@
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
 
-  --accent: #6366f1;           /* Indigo Accent */
+  --accent: #6366f1;
   --accent-hover: #4f46e5;
-  --accent-subtle: rgba(99, 102, 241, 0.08);
+  --accent-subtle: rgba(99, 102, 241, 0.1);
   --accent-border: rgba(99, 102, 241, 0.25);
 
   --emerald: #10b981;
-  --emerald-subtle: rgba(16, 185, 129, 0.08);
+  --emerald-subtle: rgba(16, 185, 129, 0.1);
 
+  --nav-bg: rgba(11, 12, 14, 0.8);
+  --nav-bg-scrolled: rgba(11, 12, 14, 0.94);
+  --btn-primary-bg: #f8fafc;
+  --btn-primary-text: #0b0c0e;
+}
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-muted: #f1f5f9;
+  --bg-hover: #e2e8f0;
+  
+  --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --border-hover: #cbd5e1;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-subtle: rgba(79, 70, 229, 0.08);
+  --accent-border: rgba(79, 70, 229, 0.2);
+
+  --emerald: #059669;
+  --emerald-subtle: rgba(5, 150, 105, 0.08);
+
+  --nav-bg: rgba(248, 250, 252, 0.8);
+  --nav-bg-scrolled: rgba(248, 250, 252, 0.94);
+  --btn-primary-bg: #0f172a;
+  --btn-primary-text: #ffffff;
+}
+
+:root {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
@@ -37,12 +73,11 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 body {
@@ -53,11 +88,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
-  background: rgba(99, 102, 241, 0.3);
-  color: #fff;
+  background: rgba(99, 102, 241, 0.25);
+  color: var(--text-primary);
 }
 
 ::-webkit-scrollbar {
@@ -67,11 +103,8 @@ body {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--bg-muted);
-  border-radius: var(--radius-full);
-}
-::-webkit-scrollbar-thumb:hover {
   background: var(--border-hover);
+  border-radius: var(--radius-full);
 }
 
 a {
@@ -110,7 +143,7 @@ button {
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--accent);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -119,7 +152,7 @@ button {
 
 .section-title {
   font-size: clamp(28px, 3.5vw, 42px);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.025em;
   color: var(--text-primary);
   line-height: 1.25;
@@ -140,8 +173,8 @@ button {
   justify-content: center;
   gap: 8px;
   padding: 10px 20px;
-  background: var(--text-primary);
-  color: var(--bg);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   border-radius: var(--radius-sm);
   font-size: 14px;
   font-weight: 600;
@@ -150,9 +183,8 @@ button {
 }
 
 .btn-primary:hover {
-  background: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.12);
+  opacity: 0.94;
 }
 
 .btn-outline {
