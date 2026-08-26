@@ -1,5 +1,5 @@
 .security-page-section {
-  padding: 60px 0 80px;
+  padding: 40px 0 80px;
 }
 
 .security-page-header {
@@ -13,6 +13,7 @@
   border-radius: var(--radius-lg);
   padding: 32px;
   margin-bottom: 56px;
+  box-shadow: var(--card-shadow);
 }
 
 .owasp-layout {
@@ -162,6 +163,7 @@
   border-radius: var(--radius);
   cursor: pointer;
   transition: var(--transition);
+  box-shadow: var(--card-shadow);
 }
 
 .checklist-card:hover {
@@ -217,6 +219,7 @@
   flex-direction: column;
   align-items: center;
   gap: 14px;
+  box-shadow: var(--card-shadow);
 }
 
 .security-cta h3 {
@@ -238,8 +241,32 @@
   flex-wrap: wrap;
 }
 
+/* ── Responsive Breakpoints ── */
 @media (max-width: 850px) {
+  .owasp-showcase {
+    padding: 20px;
+  }
   .owasp-layout, .checklist-grid {
     grid-template-columns: 1fr;
+  }
+  .security-cta {
+    padding: 24px 18px;
+  }
+}
+
+@media (max-width: 580px) {
+  .security-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .security-cta-actions .btn-primary,
+  .security-cta-actions .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+  .owasp-btn {
+    padding: 10px;
+    font-size: 12px;
   }
 }

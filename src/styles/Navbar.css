@@ -120,11 +120,6 @@
   background: var(--bg-muted);
 }
 
-.theme-toggle-label {
-  font-size: 12px;
-  font-weight: 500;
-}
-
 /* CV Button */
 .nav-cv-btn {
   display: inline-flex;
@@ -158,7 +153,10 @@
   display: none;
   flex-direction: column;
   gap: 5px;
-  padding: 4px;
+  padding: 8px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
 }
 
 .hamburger span {
@@ -178,19 +176,23 @@
   transform: translateY(-3.5px) rotate(-45deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .hamburger {
     display: flex;
   }
   .nav-menu {
     position: fixed;
-    inset: 0;
-    top: 60px;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - 64px);
     background: var(--bg);
     flex-direction: column;
     align-items: stretch;
     padding: 24px;
     gap: 12px;
+    overflow-y: auto;
     transform: translateY(-100%);
     opacity: 0;
     pointer-events: none;
@@ -205,10 +207,17 @@
   .nav-link {
     font-size: 16px;
     padding: 12px;
+    border: 1px solid var(--border);
   }
-  .theme-toggle-btn, .nav-cv-btn {
+  .lang-toggle-btn, .theme-toggle-btn, .nav-cv-btn {
     justify-content: center;
     padding: 12px;
     font-size: 14px;
+  }
+  .nav-cta {
+    margin-left: 0;
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
   }
 }

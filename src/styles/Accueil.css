@@ -1,11 +1,11 @@
 .hero-section {
-  padding: 60px 0 80px;
+  padding: 40px 0 80px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 350px;
-  gap: 56px;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
   align-items: start;
 }
 
@@ -17,7 +17,7 @@
   background: var(--emerald-subtle);
   border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: var(--radius-full);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .status-indicator {
@@ -36,16 +36,16 @@
 }
 
 .hero-headline {
-  font-size: clamp(38px, 4.5vw, 54px);
+  font-size: clamp(32px, 5vw, 54px);
   font-weight: 800;
   letter-spacing: -0.035em;
   color: var(--text-primary);
-  line-height: 1.1;
+  line-height: 1.12;
   margin-bottom: 12px;
 }
 
 .hero-subheadline {
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(17px, 2.5vw, 22px);
   font-weight: 600;
   color: var(--accent);
   line-height: 1.35;
@@ -53,11 +53,11 @@
 }
 
 .hero-bio {
-  font-size: 16px;
+  font-size: 15.5px;
   color: var(--text-secondary);
   line-height: 1.7;
   max-width: 600px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .hero-actions {
@@ -94,6 +94,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 .home-portrait-card {
@@ -105,6 +106,7 @@
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .home-portrait-card:hover {
@@ -176,34 +178,35 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  width: 100%;
 }
 
 .metric-card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 14px 10px;
+  padding: 14px 8px;
   text-align: center;
   box-shadow: var(--card-shadow);
 }
 
 .metric-value {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .metric-label {
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--text-muted);
   line-height: 1.2;
 }
 
 /* Tech Banner */
 .tech-banner {
-  margin-top: 60px;
+  margin-top: 48px;
   padding: 20px 24px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
@@ -239,18 +242,52 @@
   color: var(--text-secondary);
 }
 
+/* ── Responsive Breakpoints ── */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   .hero-aside {
-    max-width: 350px;
+    max-width: 380px;
     margin: 0 auto;
   }
   .tech-banner {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-section {
+    padding: 24px 0 60px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+  .portrait-image-wrapper {
+    height: 280px;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .metric-card {
+    padding: 10px 4px;
+  }
+  .metric-value {
+    font-size: 13.5px;
+  }
+  .metric-label {
+    font-size: 9.5px;
   }
 }
