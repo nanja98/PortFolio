@@ -1,65 +1,43 @@
 .security-page-section {
-  padding: var(--section-py) 0;
+  padding: 60px 0 80px;
 }
 
 .security-page-header {
-  text-align: center;
-  max-width: 650px;
-  margin: 0 auto 64px;
+  margin-bottom: 48px;
 }
 
-.security-page-title {
-  font-size: clamp(34px, 4vw, 48px);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
-}
-
-.security-page-subtitle {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.section-heading {
-  font-size: clamp(24px, 2.5vw, 32px);
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 24px;
-}
-
-/* ── OWASP Showcase ── */
+/* OWASP Showcase */
 .owasp-showcase {
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 36px;
-  margin-bottom: 72px;
+  padding: 32px;
+  margin-bottom: 56px;
 }
 
 .owasp-layout {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
-  gap: 32px;
-  margin-top: 24px;
+  gap: 24px;
+  margin-top: 20px;
 }
 
 .owasp-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .owasp-btn {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
+  padding: 12px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius);
   color: var(--text-secondary);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 500;
   text-align: left;
   transition: var(--transition);
@@ -72,7 +50,7 @@
 
 .owasp-btn.active {
   border-color: var(--accent);
-  background: var(--accent-dim);
+  background: var(--accent-subtle);
   color: var(--text-primary);
 }
 
@@ -81,9 +59,6 @@
   font-size: 11px;
   font-weight: 600;
   color: var(--accent);
-  background: rgba(139,92,246,0.15);
-  padding: 4px 8px;
-  border-radius: 4px;
 }
 
 .owasp-name {
@@ -94,105 +69,94 @@
 .owasp-badge {
   font-size: 10px;
   font-weight: 700;
-  padding: 3px 8px;
-  border-radius: var(--radius-full);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
 }
 
 .owasp-badge.danger {
-  background: rgba(239, 68, 68, 0.15);
+  background: rgba(239, 68, 68, 0.12);
   color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.25);
 }
 
 .owasp-badge.warning {
-  background: rgba(245, 158, 11, 0.15);
+  background: rgba(245, 158, 11, 0.12);
   color: #f59e0b;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
 /* Details Panel */
 .owasp-details {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
+  background: var(--bg);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .details-header {
   border-bottom: 1px solid var(--border);
-  padding-bottom: 16px;
+  padding-bottom: 12px;
 }
 
 .details-code {
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 .details-title {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text-primary);
   margin-top: 4px;
 }
 
 .details-block h4 {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
 }
 
 .details-block p {
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .details-block.mitigation {
-  background: rgba(16, 185, 129, 0.06);
-  border: 1px solid rgba(16, 185, 129, 0.2);
-  border-radius: var(--radius);
-  padding: 16px;
+  background: var(--emerald-subtle);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 14px;
 }
 
 .details-block.mitigation h4 {
-  color: #10b981;
+  color: var(--emerald);
 }
 
-/* ── Checklist Section ── */
+/* Checklist Section */
 .checklist-section {
-  margin-bottom: 72px;
-}
-
-.checklist-header {
-  margin-bottom: 32px;
-}
-
-.checklist-subtitle {
-  font-size: 15px;
-  color: var(--text-secondary);
-  margin-top: -16px;
+  margin-bottom: 56px;
 }
 
 .checklist-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  margin-top: 24px;
 }
 
 .checklist-card {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding: 20px;
+  gap: 14px;
+  padding: 18px;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -201,38 +165,36 @@
 }
 
 .checklist-card:hover {
-  border-color: var(--accent);
-  background: var(--bg-elevated);
+  border-color: var(--border-hover);
 }
 
 .checklist-card.completed {
   border-color: rgba(16, 185, 129, 0.4);
-  background: rgba(16, 185, 129, 0.05);
+  background: var(--emerald-subtle);
 }
 
 .checkbox {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  border: 2px solid var(--border-hover);
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1.5px solid var(--border-hover);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 14px;
-  color: #10b981;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--emerald);
   flex-shrink: 0;
   margin-top: 2px;
-  transition: var(--transition);
 }
 
 .checklist-card.completed .checkbox {
-  border-color: #10b981;
+  border-color: var(--emerald);
   background: rgba(16, 185, 129, 0.2);
 }
 
 .checklist-info h4 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 4px;
@@ -244,41 +206,40 @@
   line-height: 1.5;
 }
 
-/* ── Security CTA ── */
+/* Security CTA */
 .security-cta {
-  background: radial-gradient(ellipse at top right, rgba(139,92,246,0.12), transparent 70%), var(--bg-surface);
+  background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 48px;
+  padding: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .security-cta h3 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .security-cta p {
-  font-size: 15px;
+  font-size: 14.5px;
   color: var(--text-secondary);
-  max-width: 540px;
+  max-width: 500px;
 }
 
 .security-cta-actions {
   display: flex;
   gap: 12px;
-  margin-top: 12px;
+  margin-top: 8px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
-@media (max-width: 900px) {
-  .owasp-layout { grid-template-columns: 1fr; }
-  .checklist-grid { grid-template-columns: 1fr; }
-  .security-cta { padding: 32px 24px; }
+@media (max-width: 850px) {
+  .owasp-layout, .checklist-grid {
+    grid-template-columns: 1fr;
+  }
 }
