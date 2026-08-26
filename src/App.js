@@ -7,6 +7,7 @@ import Security from './pages/Security';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import SocialSidebar from './components/SocialSidebar';
+import FAQBot from './components/FAQBot';
 import './App.css';
 
 // Global scroll-reveal observer
@@ -34,6 +35,7 @@ function App() {
       <Router>
         <RevealObserver />
         <SocialSidebar />
+        <FAQBot />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
