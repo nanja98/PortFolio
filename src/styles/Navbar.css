@@ -73,6 +73,32 @@
   background: var(--bg-surface);
 }
 
+/* CLI Terminal Button */
+.nav-cli-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  transition: var(--transition);
+}
+
+.nav-cli-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  transform: translateY(-1px);
+}
+
+.cli-icon {
+  font-weight: 700;
+}
+
 /* Language Switcher Button */
 .lang-toggle-btn {
   display: inline-flex;
@@ -209,7 +235,7 @@
     padding: 12px;
     border: 1px solid var(--border);
   }
-  .lang-toggle-btn, .theme-toggle-btn, .nav-cv-btn {
+  .lang-toggle-btn, .theme-toggle-btn, .nav-cv-btn, .nav-cli-btn {
     justify-content: center;
     padding: 12px;
     font-size: 14px;
