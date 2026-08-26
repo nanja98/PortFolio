@@ -20,7 +20,7 @@ const SocialSidebar = () => {
             key={s.type}
             href={s.href}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="sidebar-link"
             aria-label={s.label}
             title={s.label}

@@ -29,6 +29,18 @@ const icons = {
   ),
 };
 
+// Input Sanitizer helper to prevent XSS Attacks
+const sanitizeInput = (str) => {
+  if (!str) return "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;")
+    .replace(/\//g, "&#x2F;");
+};
+
 const Contact = () => {
   const { lang } = useLanguage();
   const data = contactData[lang] || contactData.fr;
@@ -37,13 +49,40 @@ const Contact = () => {
 
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
+    setErrorMessage("");
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Client-side Rate Limiting Protection (Prevent Spam Bots)
+    const now = Date.now();
+    if (now - lastSubmitTime < 10000) {
+      setErrorMessage(
+        lang === "fr"
+          ? "Veuillez patienter quelques secondes avant d'envoyer un autre message."
+          : "Please wait a few seconds before sending another message."
+      );
+      return;
+    }
+
+    // Sanitize all form fields before processing
+    const cleanData = {
+      name: sanitizeInput(formData.name),
+      email: sanitizeInput(formData.email),
+      subject: sanitizeInput(formData.subject),
+      message: sanitizeInput(formData.message),
+    };
+
+    console.log("Secure sanitized submission payload:", cleanData);
+    setLastSubmitTime(now);
     setSent(true);
+
     setTimeout(() => {
       setSent(false);
       setFormData({ name: "", email: "", subject: "", message: "" });
@@ -57,7 +96,7 @@ const Contact = () => {
         <div className="container">
 
           <div className="contact-header reveal">
-            <span className="section-tag">{lang === "fr" ? "Contact" : "Get in Touch"}</span>
+            <span className="section-tag">{lang === "fr" ? "Contact Sécurisé" : "Secure Contact"}</span>
             <h1 className="section-title">{header.title}</h1>
             <p className="section-subtitle">{header.subtitle}</p>
           </div>
@@ -74,7 +113,7 @@ const Contact = () => {
                     key={item.label}
                     href={item.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="social-item"
                   >
                     <div className="social-icon">{icons[item.type] || item.icon}</div>
@@ -97,6 +136,7 @@ const Contact = () => {
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit}>
+                  {errorMessage && <div className="error-banner" style={{ color: "#ef4444", fontSize: "13px" }}>{errorMessage}</div>}
                   <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="name">{form.name}</label>
