@@ -1,80 +1,162 @@
 {
-  "name": "Nanja Randriamalala",
-  "degree": "Ingénieur en Informatique & Télécommunications (Master 2)",
-  "school": "ISPM – Antananarivo",
-  "bio": [
-    "Je suis <strong>Nanja Randriamalala</strong>, <strong>Ingénieur Développeur Web Full Stack</strong> diplômé en Master 2 Informatique et Télécommunications à l'ISPM. Combinant une solide rigueur d'ingénierie et une passion pour le web moderne, je conçois des architectures logicielles fiables, évolutives et hautement sécurisées.",
-    "Ma double compétence en <strong>développement Full Stack</strong> et en <strong>sécurité des applications web (OWASP Top 10)</strong> me permet de construire des solutions complètes prêtes pour la production, prémunies contre les vulnérabilités courantes (injection SQL, XSS, CSRF, attaques de force brute, failles d'authentification).",
-    "Entre <strong>2025 et 2026</strong>, j'ai notamment collaboré en freelance avec des <strong>clients internationaux</strong> (Europe, France) sur des missions complexes d'audit de sécurité applicative, de durcissement d'API REST et de mise en conformité OWASP ASVS pour des plateformes SaaS et e-commerce à fort trafic."
-  ],
-  "securityExpertise": {
-    "title": "Sécurisation & Conformité OWASP",
-    "subtitle": "Directement intégrée au cycle de développement pour garantir des applications étanches.",
-    "pillars": [
+  "fr": {
+    "name": "Nanja Randriamalala",
+    "degree": "Ingénieur en Informatique & Télécommunications (Master 2)",
+    "school": "ISPM – Antananarivo",
+    "bio": [
+      "Je suis <strong>Nanja Randriamalala</strong>, <strong>Ingénieur Développeur Web Full Stack</strong> diplômé en Master 2 Informatique et Télécommunications à l'ISPM. Combinant une solide rigueur d'ingénierie et une passion pour le web moderne, je conçois des architectures logicielles fiables, évolutives et hautement sécurisées.",
+      "Ma double compétence en <strong>développement Full Stack</strong> et en <strong>sécurité des applications web (OWASP Top 10)</strong> me permet de construire des solutions complètes prêtes pour la production, prémunies contre les vulnérabilités courantes (injection SQL, XSS, CSRF, attaques de force brute, failles d'authentification).",
+      "Entre <strong>2025 et 2026</strong>, j'ai notamment collaboré en freelance avec des <strong>clients internationaux</strong> (Europe, France) sur des missions complexes d'audit de sécurité applicative, de durcissement d'API REST et de mise en conformité OWASP ASVS pour des plateformes SaaS et e-commerce à fort trafic."
+    ],
+    "securityExpertise": {
+      "title": "Sécurisation & Conformité OWASP",
+      "subtitle": "Directement intégrée au cycle de développement pour garantir des applications étanches.",
+      "pillars": [
+        {
+          "icon": "🛡️",
+          "title": "Protection OWASP Top 10",
+          "description": "Prévention active contre les failles d'injection SQL (ORM Prisma/SQL préparé), Cross-Site Scripting (XSS), et Cross-Site Request Forgery (CSRF tokens & cookies SameSite)."
+        },
+        {
+          "icon": "🔐",
+          "title": "Authentification & Gestion des Accès",
+          "description": "Implémentation de protocoles JWT sécurisés (rotation de tokens, cookies HTTP-Only), hachage fort (bcrypt/argon2) et contrôle d'accès basé sur les rôles (RBAC)."
+        },
+        {
+          "icon": "⚡",
+          "title": "Sécurité Réseau & Serveur",
+          "description": "Configuration de Security Headers (Helmet.js, Content Security Policy, HSTS), limitation de débit (Rate-Limiting pour contrer le Brute Force) et assainissement strict des entrées."
+        },
+        {
+          "icon": "🔍",
+          "title": "Audit & Code Review",
+          "description": "Analyse de vulnérabilités, revue de code axée sur la sécurité et tests d'intrusion applicatifs pour clients internationaux."
+        }
+      ]
+    },
+    "skills": [
       {
-        "icon": "🛡️",
-        "title": "Protection OWASP Top 10",
-        "description": "Prévention active contre les failles d'injection SQL (ORM Prisma/SQL préparé), Cross-Site Scripting (XSS), et Cross-Site Request Forgery (CSRF tokens & cookies SameSite)."
+        "category": "Frontend Architecture",
+        "items": ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5 / CSS3", "State Management", "Figma UI/UX"]
       },
       {
-        "icon": "🔐",
-        "title": "Authentification & Gestion des Accès",
-        "description": "Implémentation de protocoles JWT sécurisés (rotation de tokens, cookies HTTP-Only), hachage fort (bcrypt/argon2) et contrôle d'accès basé sur les rôles (RBAC)."
+        "category": "Backend & APIs",
+        "items": ["Node.js", "Express.js", "Prisma ORM", "API RESTful", "Microservices", "JWT & OAuth2"]
       },
       {
-        "icon": "⚡",
-        "title": "Sécurité Réseau & Serveur",
-        "description": "Configuration de Security Headers (Helmet.js, Content Security Policy, HSTS), limitation de débit (Rate-Limiting pour contrer le Brute Force) et assainissement strict des entrées."
+        "category": "Sécurité Web (OWASP)",
+        "items": ["OWASP Top 10", "Audit de code", "Sanitisation des données", "CSRF / XSS Shield", "Rate-Limiting", "Security Headers"]
       },
       {
-        "icon": "🔍",
-        "title": "Audit & Code Review",
-        "description": "Analyse de vulnérabilités, revue de code axée sur la sécurité et tests d'intrusion applicatifs pour clients internationaux."
+        "category": "Bases de données & DevOps",
+        "items": ["MySQL", "PostgreSQL", "Git / GitHub", "Docker", "Linux SysAdmin", "Postman / Thunder Client"]
+      }
+    ],
+    "experiences": [
+      {
+        "year": "2025 – 2026",
+        "role": "Ingénieur Freelance – Audit & Sécurisation Web (International)",
+        "org": "Clients Internationaux (Europe / Remote)",
+        "description": "Audits de sécurité applicative et revue de code selon le référentiel OWASP ASVS pour des plateformes SaaS et e-commerce internationales. Élimination des vulnérabilités critiques (XSS, CSRF, Injections SQL), sécurisation des flux d'authentification JWT (cookies HTTP-Only SameSite=Strict), et déploiement de politiques de sécurité avancées (Content Security Policy, Rate-Limiting, Helmet.js)."
+      },
+      {
+        "year": "2024",
+        "role": "Ingénieur Développeur Full Stack",
+        "org": "UCREF – Ministère de l'Environnement",
+        "description": "Conception et développement d'une application sécurisée de gestion de données environnementales. Réduction des vulnérabilités applicatives et mise en conformité OWASP."
+      },
+      {
+        "year": "2023",
+        "role": "Ingénieur Développeur Web",
+        "org": "CIDST Tsimbazaza",
+        "description": "Développement d'un système d'archivage scientifique sécurisé avec contrôle d'accès par rôles (RBAC) et chiffrement des données sensibles."
+      },
+      {
+        "year": "2022",
+        "role": "Développeur Web Freelance",
+        "org": "Projets Indépendants",
+        "description": "Conception et développement d'applications web responsives et plateformes interactives (réservations, vitrines)."
       }
     ]
   },
-  "skills": [
-    {
-      "category": "Frontend Architecture",
-      "items": ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5 / CSS3", "State Management", "Figma UI/UX"]
+  "en": {
+    "name": "Nanja Randriamalala",
+    "degree": "Master's Degree in Software & Telecommunications Engineering",
+    "school": "ISPM – Antananarivo",
+    "bio": [
+      "I am <strong>Nanja Randriamalala</strong>, a <strong>Full Stack Web Engineer</strong> holding a Master's Degree in Computer Science & Telecommunications from ISPM. Combining engineering discipline with a passion for modern web technologies, I craft reliable, scalable, and highly secure software architectures.",
+      "My dual expertise in <strong>Full Stack Development</strong> and <strong>Web Application Security (OWASP Top 10)</strong> allows me to build production-ready solutions protected against common vulnerabilities (SQL Injections, XSS, CSRF, brute-force attacks, authentication flaws).",
+      "Between <strong>2025 and 2026</strong>, I worked as a freelance consultant for <strong>international clients</strong> (Europe, France) on application security audits, REST API hardening, and OWASP ASVS compliance for high-traffic SaaS and e-commerce platforms."
+    ],
+    "securityExpertise": {
+      "title": "Web Security & OWASP Compliance",
+      "subtitle": "Directly integrated into the software development lifecycle to guarantee bulletproof applications.",
+      "pillars": [
+        {
+          "icon": "🛡️",
+          "title": "OWASP Top 10 Protection",
+          "description": "Active prevention against SQL Injection (Prisma ORM/Prepared statements), Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF tokens & SameSite cookies)."
+        },
+        {
+          "icon": "🔐",
+          "title": "Authentication & Access Management",
+          "description": "Hardened JWT protocols (refresh token rotation, HTTP-Only cookies), strong password hashing (bcrypt/argon2), and Role-Based Access Control (RBAC)."
+        },
+        {
+          "icon": "⚡",
+          "title": "Network & Server Security",
+          "description": "Security Headers configuration (Helmet.js, Content Security Policy, HSTS), Rate-Limiting to prevent Brute-Force attacks, and strict input sanitization."
+        },
+        {
+          "icon": "🔍",
+          "title": "Security Audits & Code Review",
+          "description": "Vulnerability scanning, security-focused code reviews, and application penetration testing for international clients."
+        }
+      ]
     },
-    {
-      "category": "Backend & APIs",
-      "items": ["Node.js", "Express.js", "Prisma ORM", "API RESTful", "Microservices", "JWT & OAuth2"]
-    },
-    {
-      "category": "Sécurité Web (OWASP)",
-      "items": ["OWASP Top 10", "Audit de code", "Sanitisation des données", "CSRF / XSS Shield", "Rate-Limiting", "Security Headers"]
-    },
-    {
-      "category": "Bases de données & DevOps",
-      "items": ["MySQL", "PostgreSQL", "Git / GitHub", "Docker", "Linux SysAdmin", "Postman / Thunder Client"]
-    }
-  ],
-  "experiences": [
-    {
-      "year": "2025 – 2026",
-      "role": "Ingénieur Freelance – Audit & Sécurisation Web (International)",
-      "org": "Clients Internationaux (Europe / Remote)",
-      "description": "Audits de sécurité applicative et revue de code selon le référentiel OWASP ASVS pour des plateformes SaaS et e-commerce internationales. Élimination des vulnérabilités critiques (XSS, CSRF, Injections SQL), sécurisation des flux d'authentification JWT (cookies HTTP-Only SameSite=Strict), et déploiement de politiques de sécurité avancées (Content Security Policy, Rate-Limiting, Helmet.js)."
-    },
-    {
-      "year": "2024",
-      "role": "Ingénieur Développeur Full Stack",
-      "org": "UCREF – Ministère de l'Environnement",
-      "description": "Conception et développement d'une application sécurisée de gestion de données environnementales. Réduction des vulnérabilités applicatives et mise en conformité OWASP."
-    },
-    {
-      "year": "2023",
-      "role": "Ingénieur Développeur Web",
-      "org": "CIDST Tsimbazaza",
-      "description": "Développement d'un système d'archivage scientifique sécurisé avec contrôle d'accès par rôles (RBAC) et chiffrement des données sensibles."
-    },
-    {
-      "year": "2022",
-      "role": "Développeur Web Freelance",
-      "org": "Projets Indépendants",
-      "description": "Conception et développement d'applications web responsives et plateformes interactives (réservations, vitrines)."
-    }
-  ]
+    "skills": [
+      {
+        "category": "Frontend Architecture",
+        "items": ["React.js", "TypeScript", "JavaScript (ES6+)", "HTML5 / CSS3", "State Management", "Figma UI/UX"]
+      },
+      {
+        "category": "Backend & APIs",
+        "items": ["Node.js", "Express.js", "Prisma ORM", "RESTful APIs", "Microservices", "JWT & OAuth2"]
+      },
+      {
+        "category": "Web Security (OWASP)",
+        "items": ["OWASP Top 10", "Code Auditing", "Data Sanitization", "CSRF / XSS Shield", "Rate-Limiting", "Security Headers"]
+      },
+      {
+        "category": "Databases & DevOps",
+        "items": ["MySQL", "PostgreSQL", "Git / GitHub", "Docker", "Linux SysAdmin", "Postman / Thunder Client"]
+      }
+    ],
+    "experiences": [
+      {
+        "year": "2025 – 2026",
+        "role": "Freelance Web Security Engineer (International)",
+        "org": "International Clients (Europe / Remote)",
+        "description": "Application security audits and code reviews following OWASP ASVS standards for international SaaS and e-commerce platforms. Remediated critical vulnerabilities (XSS, CSRF, SQL Injections), secured JWT auth flows (HTTP-Only SameSite=Strict cookies), and deployed advanced security policies (CSP, Rate-Limiting, Helmet.js)."
+      },
+      {
+        "year": "2024",
+        "role": "Full Stack Web Engineer",
+        "org": "UCREF – Ministry of Environment",
+        "description": "Designed and developed a secure web application for environmental data management. Mitigated application vulnerabilities and enforced OWASP compliance."
+      },
+      {
+        "year": "2023",
+        "role": "Web Engineer",
+        "org": "CIDST Tsimbazaza",
+        "description": "Developed a secure scientific archiving web application with Role-Based Access Control (RBAC) and sensitive data encryption."
+      },
+      {
+        "year": "2022",
+        "role": "Freelance Web Developer",
+        "org": "Independent Projects",
+        "description": "Designed and built responsive web applications and interactive booking platforms."
+      }
+    ]
+  }
 }

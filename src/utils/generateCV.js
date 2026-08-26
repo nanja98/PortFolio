@@ -2,17 +2,11 @@ import { jsPDF } from "jspdf";
 import cvData from "../data/cv.json";
 
 /**
- * Clean & Professional ATS-Friendly PDF CV Generator (2-Page Executive Layout)
- * Adheres strictly to ATS parsing standards:
- * - Single-column flow
- * - Standard web-safe typography (Helvetica)
- * - Clear text hierarchy and semantic section labels
- * - Standard bullet points
- * - High contrast ratios
+ * Multilingual ATS-Friendly PDF CV Generator (FR / EN)
  */
-export function generateCV() {
+export function generateCV(lang = "fr") {
   const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
-  const cv = cvData;
+  const cv = cvData[lang] || cvData.fr;
 
   const MARGIN_X = 18;
   const MARGIN_Y = 18;
@@ -22,7 +16,7 @@ export function generateCV() {
 
   // Professional Palette
   const PRIMARY = [30, 41, 59];    // Deep Slate #1E293B
-  const ACCENT = [124, 58, 237];   // Elegant Violet #7C3AED
+  const ACCENT = [99, 102, 241];   // Indigo #6366F1
   const TEXT_MAIN = [51, 65, 85];  // Charcoal #334155
   const TEXT_MUTED = [100, 116, 139];// Muted Gray #64748B
   const LINE_COLOR = [226, 232, 240]; // Light Gray #E2E8F0
@@ -35,7 +29,7 @@ export function generateCV() {
     doc.setFontSize(8.5);
     doc.setTextColor(...TEXT_MUTED);
     doc.text(
-      `${cv.name} — CV Ingénieur Développeur Full Stack & OWASP`,
+      `${cv.name} — ${cv.title}`,
       MARGIN_X,
       PAGE_H - 10
     );
@@ -88,7 +82,7 @@ export function generateCV() {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
   doc.setTextColor(...TEXT_MUTED);
-  const contactText = `Email: ${cv.email}   |   Tel: ${cv.phone}   |   Localisation: ${cv.location}`;
+  const contactText = `Email: ${cv.email}   |   Tel: ${cv.phone}   |   ${cv.location}`;
   doc.text(contactText, MARGIN_X, y);
   y += 4.5;
 
@@ -102,8 +96,8 @@ export function generateCV() {
   doc.line(MARGIN_X, y, PAGE_W - MARGIN_X, y);
   y += 5;
 
-  // ── PROFIL / RÉSUMÉ ──
-  renderSectionHeader("Profil Professionnel");
+  // ── PROFIL / SUMMARY ──
+  renderSectionHeader(lang === "fr" ? "Profil Professionnel" : "Professional Summary");
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9.5);
   doc.setTextColor(...TEXT_MAIN);
@@ -115,8 +109,8 @@ export function generateCV() {
   });
   y += 2;
 
-  // ── COMPÉTENCES CLÉS ──
-  renderSectionHeader("Compétences Techniques & Ingénierie");
+  // ── SKILLS ──
+  renderSectionHeader(lang === "fr" ? "Compétences Techniques & Ingénierie" : "Technical & Engineering Skills");
   doc.setFontSize(9.5);
   Object.entries(cv.skills).forEach(([category, items]) => {
     checkPageBreak(6);
@@ -142,12 +136,11 @@ export function generateCV() {
   });
   y += 2;
 
-  // ── EXPÉRIENCES PROFESSIONNELLES ──
-  renderSectionHeader("Expérience Professionnelle");
+  // ── EXPERIENCE ──
+  renderSectionHeader(lang === "fr" ? "Expérience Professionnelle" : "Work Experience");
   cv.experience.forEach((exp) => {
     checkPageBreak(16);
 
-    // Title + Period
     doc.setFont("helvetica", "bold");
     doc.setFontSize(10.5);
     doc.setTextColor(...PRIMARY);
@@ -159,14 +152,12 @@ export function generateCV() {
     doc.text(exp.period, PAGE_W - MARGIN_X, y, { align: "right" });
     y += 4.8;
 
-    // Org + Location
     doc.setFont("helvetica", "italic");
     doc.setFontSize(9.5);
     doc.setTextColor(...TEXT_MUTED);
     doc.text(`${exp.org} — ${exp.location}`, MARGIN_X, y);
     y += 5.2;
 
-    // Bullet Points
     doc.setFont("helvetica", "normal");
     doc.setFontSize(9.2);
     doc.setTextColor(...TEXT_MAIN);
@@ -185,8 +176,8 @@ export function generateCV() {
     y += 3;
   });
 
-  // ── FORMATION & DIPLÔMES ──
-  renderSectionHeader("Formation & Diplômes d'Ingénieur");
+  // ── EDUCATION ──
+  renderSectionHeader(lang === "fr" ? "Formation & Diplômes d'Ingénieur" : "Education & Engineering Degrees");
   cv.education.forEach((edu) => {
     checkPageBreak(12);
 
@@ -208,8 +199,8 @@ export function generateCV() {
     y += 6;
   });
 
-  // ── LANGUES ──
-  renderSectionHeader("Langues");
+  // ── LANGUAGES ──
+  renderSectionHeader(lang === "fr" ? "Langues" : "Languages");
   cv.languages.forEach((langItem) => {
     checkPageBreak(5);
     doc.setFont("helvetica", "bold");
@@ -223,9 +214,7 @@ export function generateCV() {
     y += 4.8;
   });
 
-  // Final footer on last page
   addFooter();
 
-  // Save ATS PDF
-  doc.save(`CV_Ingenieur_${cv.name.replace(/\s+/g, "_")}_ATS.pdf`);
+  doc.save(`CV_${cv.name.replace(/\s+/g, "_")}_${lang.toUpperCase()}_ATS.pdf`);
 }

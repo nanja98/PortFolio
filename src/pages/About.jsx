@@ -5,9 +5,13 @@ import Navbar from "../components/Navbar";
 import Profile from "../images/Photo.png";
 import { generateCV } from "../utils/generateCV";
 import aboutData from "../data/about.json";
+import { useLanguage } from "../context/LanguageContext";
 
 const About = () => {
-  const { name, degree, school, bio, securityExpertise, skills, experiences } = aboutData;
+  const { lang } = useLanguage();
+  const data = aboutData[lang] || aboutData.fr;
+
+  const { name, degree, school, bio, securityExpertise, skills, experiences } = data;
 
   return (
     <div className="page">
@@ -17,10 +21,12 @@ const About = () => {
 
           {/* Page Header */}
           <div className="about-header reveal">
-            <span className="section-tag">Profil & Parcours</span>
-            <h1 className="section-title">Ingénieur Développeur Full Stack & Sécurité</h1>
+            <span className="section-tag">{lang === "fr" ? "Profil & Parcours" : "Profile & Background"}</span>
+            <h1 className="section-title">
+              {lang === "fr" ? "Ingénieur Développeur Full Stack & Sécurité" : "Full Stack Web & Security Engineer"}
+            </h1>
             <p className="section-subtitle">
-              {degree} diplômé de l'ISPM. Expertise en développement React/Node.js et en conformité OWASP Top 10.
+              {degree} — {school}. {lang === "fr" ? "Expertise en développement React/Node.js et en conformité OWASP Top 10." : "Expertise in React/Node.js development and OWASP Top 10 compliance."}
             </p>
           </div>
 
@@ -35,22 +41,22 @@ const About = () => {
             </div>
 
             <div className="bio-content reveal d2">
-              <h2 className="bio-heading">Présentation</h2>
+              <h2 className="bio-heading">{lang === "fr" ? "Présentation" : "Overview"}</h2>
               {bio.map((paragraph, idx) => (
                 <p key={idx} className="bio-p" dangerouslySetInnerHTML={{ __html: paragraph }} />
               ))}
 
               <div className="bio-cta-row">
-                <button onClick={generateCV} className="btn-primary">
+                <button onClick={() => generateCV(lang)} className="btn-primary">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                     <polyline points="7 10 12 15 17 10" />
                     <line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
-                  Télécharger le CV ATS (PDF)
+                  {lang === "fr" ? "Télécharger le CV ATS (PDF)" : "Download ATS CV (PDF)"}
                 </button>
                 <Link to="/contact" className="btn-outline">
-                  Contact
+                  {lang === "fr" ? "Contact" : "Contact"}
                 </Link>
               </div>
             </div>
@@ -59,7 +65,7 @@ const About = () => {
           {/* Security OWASP Focus */}
           {securityExpertise && (
             <div className="sec-block reveal d3">
-              <span className="section-tag">Cyber-Sécurité Web</span>
+              <span className="section-tag">{lang === "fr" ? "Cyber-Sécurité Web" : "Web Cyber-Security"}</span>
               <h2 className="section-title">{securityExpertise.title}</h2>
               <p className="section-subtitle">{securityExpertise.subtitle}</p>
 
@@ -77,8 +83,10 @@ const About = () => {
 
           {/* Skills Matrix */}
           <div className="skills-block reveal d4">
-            <span className="section-tag">Compétences Techniques</span>
-            <h2 className="section-title">Matrice de Compétences d'Ingénieur</h2>
+            <span className="section-tag">{lang === "fr" ? "Compétences Techniques" : "Technical Skills"}</span>
+            <h2 className="section-title">
+              {lang === "fr" ? "Matrice de Compétences d'Ingénieur" : "Engineering Skills Matrix"}
+            </h2>
 
             <div className="skills-grid">
               {skills.map((group) => (
@@ -96,8 +104,8 @@ const About = () => {
 
           {/* Experience Timeline */}
           <div className="timeline-block reveal d5">
-            <span className="section-tag">Expérience Professionnelle</span>
-            <h2 className="section-title">Parcours & Missions</h2>
+            <span className="section-tag">{lang === "fr" ? "Expérience Professionnelle" : "Work Experience"}</span>
+            <h2 className="section-title">{lang === "fr" ? "Parcours & Missions" : "Career & Projects"}</h2>
 
             <div className="timeline-list">
               {experiences.map((exp, idx) => (

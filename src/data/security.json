@@ -1,58 +1,118 @@
 {
-  "header": {
-    "title": "Sécurité Web & Expertise OWASP",
-    "subtitle": "Conception d'applications étanches et audit de vulnérabilités selon le standard international OWASP Top 10."
+  "fr": {
+    "header": {
+      "title": "Sécurité Web & Expertise OWASP",
+      "subtitle": "Conception d'applications étanches et audit de vulnérabilités selon le standard international OWASP Top 10."
+    },
+    "owaspTop10": [
+      {
+        "code": "A01:2021",
+        "title": "Broken Access Control",
+        "risk": "Élevé",
+        "description": "Failles de contrôle d'accès permettant à un utilisateur d'agir hors de ses permissions.",
+        "mitigation": "Mise en place de middlewares RBAC (Role-Based Access Control) stricts, vérification systématique de l'ID utilisateur côté serveur."
+      },
+      {
+        "code": "A02:2021",
+        "title": "Cryptographic Failures",
+        "risk": "Critique",
+        "description": "Exposition de données sensibles transmises ou stockées sans chiffrement approprié.",
+        "mitigation": "Hachage bcrypt/Argon2 pour les mots de passe, HTTPS/TLS 1.3 obligatoire, chiffrement AES-256 des données sensibles."
+      },
+      {
+        "code": "A03:2021",
+        "title": "Injection (SQL, NoSQL, Command)",
+        "risk": "Critique",
+        "description": "Introduction d'instructions malveillantes via des entrées utilisateur non assainies.",
+        "mitigation": "Utilisation exclusive de requêtes préparées via Prisma ORM et validation stricte des entrées (Zod/Joi)."
+      },
+      {
+        "code": "A04:2021",
+        "title": "Insecure Design",
+        "risk": "Élevé",
+        "description": "Défauts d'architecture et absence de modélisation des menaces dès la conception.",
+        "mitigation": "Prise en compte du 'Security by Design', limitation de débit (Rate-Limiting), défense en profondeur."
+      },
+      {
+        "code": "A05:2021",
+        "title": "Security Misconfiguration",
+        "risk": "Moyen",
+        "description": "Services mal configurés, en-têtes de sécurité manquants ou messages d'erreur verbeux.",
+        "mitigation": "Implémentation de Helmet.js, Content Security Policy (CSP), désactivation des en-têtes Server X-Powered-By."
+      },
+      {
+        "code": "A07:2021",
+        "title": "Identification & Auth Failures",
+        "risk": "Critique",
+        "description": "Authentification faible sujette aux attaques par force brute ou vol de session.",
+        "mitigation": "Jetons JWT sécurisés transmis en cookies HTTP-Only SameSite=Strict, protection anti-brute force par IP."
+      }
+    ],
+    "securityChecklist": [
+      { "title": "Validation & Sanitisation des Entrées", "desc": "Validation côté serveur de tous les formulaires et paramètres d'URL" },
+      { "title": "En-têtes HTTP Sécurisés (Security Headers)", "desc": "CSP, HSTS, X-Frame-Options, X-Content-Type-Options" },
+      { "title": "Gestion Sécurisée des Sessions JWT", "desc": "Cookies HTTP-Only, rotation des refresh tokens, expiration courte" },
+      { "title": "Protection Anti-CSRF & SameSite", "desc": "Protection contre les attaques de falsification de requête intersites" },
+      { "title": "Limitation de Débit (Rate Limiting)", "desc": "Contrôle des requêtes par minute sur les API sensibles (/login, /register)" },
+      { "title": "Audit & Tests d'Intrusion Applicatifs", "desc": "Revue de code axée sécurité et scanning de vulnérabilités automatisé" }
+    ]
   },
-  "owaspTop10": [
-    {
-      "code": "A01:2021",
-      "title": "Broken Access Control",
-      "risk": "Élevé",
-      "description": "Failles de contrôle d'accès permettant à un utilisateur d'agir hors de ses permissions.",
-      "mitigation": "Mise en place de middlewares RBAC (Role-Based Access Control) stricts, vérification systématique de l'ID utilisateur côté serveur."
+  "en": {
+    "header": {
+      "title": "Web Security & OWASP Expertise",
+      "subtitle": "Designing bulletproof web applications and vulnerability audits adhering to international OWASP Top 10 standards."
     },
-    {
-      "code": "A02:2021",
-      "title": "Cryptographic Failures",
-      "risk": "Critique",
-      "description": "Exposition de données sensibles transmises ou stockées sans chiffrement approprié.",
-      "mitigation": "Hachage bcrypt/Argon2 pour les mots de passe, HTTPS/TLS 1.3 obligatoire, chiffrement AES-256 des données sensibles."
-    },
-    {
-      "code": "A03:2021",
-      "title": "Injection (SQL, NoSQL, Command)",
-      "risk": "Critique",
-      "description": "Introduction d'instructions malveillantes via des entrées utilisateur non assainies.",
-      "mitigation": "Utilisation exclusive de requêtes préparées via Prisma ORM et validation stricte des entrées (Zod/Joi)."
-    },
-    {
-      "code": "A04:2021",
-      "title": "Insecure Design",
-      "risk": "Élevé",
-      "description": "Défauts d'architecture et absence de modélisation des menaces dès la conception.",
-      "mitigation": "Prise en compte du 'Security by Design', limitation de débit (Rate-Limiting), défense en profondeur."
-    },
-    {
-      "code": "A05:2021",
-      "title": "Security Misconfiguration",
-      "risk": "Moyen",
-      "description": "Services mal configurés, en-têtes de sécurité manquants ou messages d'erreur verbeux.",
-      "mitigation": "Implémentation de Helmet.js, Content Security Policy (CSP), désactivation des en-têtes Server X-Powered-By."
-    },
-    {
-      "code": "A07:2021",
-      "title": "Identification & Auth Failures",
-      "risk": "Critique",
-      "description": "Authentification faible sujette aux attaques par force brute ou vol de session.",
-      "mitigation": "Jetons JWT sécurisés transmis en cookies HTTP-Only SameSite=Strict, protection anti-brute force par IP."
-    }
-  ],
-  "securityChecklist": [
-    { "title": "Validation & Sanitisation des Entrées", "desc": "Validation côté serveur de tous les formulaires et paramètres d'URL" },
-    { "title": "En-têtes HTTP Sécurisés (Security Headers)", "desc": "CSP, HSTS, X-Frame-Options, X-Content-Type-Options" },
-    { "title": "Gestion Sécurisée des Sessions JWT", "desc": "Cookies HTTP-Only, rotation des refresh tokens, expiration courte" },
-    { "title": "Protection Anti-CSRF & SameSite", "desc": "Protection contre les attaques de falsification de requête intersites" },
-    { "title": "Limitation de Débit (Rate Limiting)", "desc": "Contrôle des requêtes par minute sur les API sensibles (/login, /register)" },
-    { "title": "Audit & Tests d'Intrusion Applicatifs", "desc": "Revue de code axée sécurité et scanning de vulnérabilités automatisé" }
-  ]
+    "owaspTop10": [
+      {
+        "code": "A01:2021",
+        "title": "Broken Access Control",
+        "risk": "High",
+        "description": "Access control flaws allowing users to act outside of their intended permissions.",
+        "mitigation": "Enforcement of strict Role-Based Access Control (RBAC) middleware and systematic server-side user ID verification."
+      },
+      {
+        "code": "A02:2021",
+        "title": "Cryptographic Failures",
+        "risk": "Critical",
+        "description": "Exposure of sensitive data transmitted or stored without appropriate encryption.",
+        "mitigation": "Bcrypt/Argon2 password hashing, mandatory HTTPS/TLS 1.3, and AES-256 encryption for sensitive payloads."
+      },
+      {
+        "code": "A03:2021",
+        "title": "Injection (SQL, NoSQL, Command)",
+        "risk": "Critical",
+        "description": "Malicious code injection via un-sanitized user inputs.",
+        "mitigation": "Exclusive use of prepared queries via Prisma ORM and strict server-side schema validation (Zod/Joi)."
+      },
+      {
+        "code": "A04:2021",
+        "title": "Insecure Design",
+        "risk": "High",
+        "description": "Architectural flaws and lack of threat modeling during initial software design.",
+        "mitigation": "'Security by Design' implementation, API Rate-Limiting, and defense-in-depth architecture."
+      },
+      {
+        "code": "A05:2021",
+        "title": "Security Misconfiguration",
+        "risk": "Medium",
+        "description": "Misconfigured services, missing security headers, or verbose server error stack traces.",
+        "mitigation": "Helmet.js integration, Content Security Policy (CSP), and disabling X-Powered-By headers."
+      },
+      {
+        "code": "A07:2021",
+        "title": "Identification & Auth Failures",
+        "risk": "Critical",
+        "description": "Weak authentication vulnerable to brute-force attacks or session hijacking.",
+        "mitigation": "Hardened JWT tokens delivered via HTTP-Only SameSite=Strict cookies and IP rate limiting."
+      }
+    ],
+    "securityChecklist": [
+      { "title": "Input Validation & Sanitization", "desc": "Server-side schema validation for all forms and URL parameters" },
+      { "title": "HTTP Security Headers", "desc": "CSP, HSTS, X-Frame-Options, X-Content-Type-Options" },
+      { "title": "Secure JWT Session Management", "desc": "HTTP-Only cookies, refresh token rotation, short expiration" },
+      { "title": "Anti-CSRF & SameSite Shield", "desc": "Protection against cross-site request forgery attacks" },
+      { "title": "API Rate Limiting", "desc": "Request throttling on sensitive API endpoints (/login, /register)" },
+      { "title": "Application Security Audit & Penetration Testing", "desc": "Security-focused code reviews and automated vulnerability scans" }
+    ]
+  }
 }

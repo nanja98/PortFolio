@@ -73,6 +73,31 @@
   background: var(--bg-surface);
 }
 
+/* Language Switcher Button */
+.lang-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.lang-toggle-btn:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-muted);
+}
+
+.lang-flag {
+  font-size: 13px;
+}
+
 /* Theme Toggle Button */
 .theme-toggle-btn {
   display: inline-flex;

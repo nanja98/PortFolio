@@ -6,12 +6,17 @@ import Navbar from "../components/Navbar";
 import heroData from "../data/hero.json";
 import contactData from "../data/contact.json";
 import { generateCV } from "../utils/generateCV";
+import { useLanguage } from "../context/LanguageContext";
 
 const Home = () => {
-  const { name, badge, description, stack, stats, cta } = heroData;
+  const { lang } = useLanguage();
+  const data = heroData[lang] || heroData.fr;
+  const contact = contactData[lang] || contactData.fr;
 
-  const githubLink = contactData.socials.find((s) => s.type === "github");
-  const linkedinLink = contactData.socials.find((s) => s.type === "linkedin");
+  const { name, badge, description, stack, stats, cta } = data;
+
+  const githubLink = contact.socials.find((s) => s.type === "github");
+  const linkedinLink = contact.socials.find((s) => s.type === "linkedin");
 
   return (
     <div className="page">
@@ -34,7 +39,9 @@ const Home = () => {
               </h1>
 
               <h2 className="hero-subheadline reveal d2">
-                Ingénieur Développeur Web Full Stack & Expert Sécurité OWASP
+                {lang === "fr"
+                  ? "Ingénieur Développeur Web Full Stack & Expert Sécurité OWASP"
+                  : "Full Stack Web Engineer & OWASP Security Expert"}
               </h2>
 
               <p className="hero-bio reveal d3">
@@ -50,17 +57,17 @@ const Home = () => {
                   </svg>
                 </Link>
 
-                <button onClick={generateCV} className="btn-outline">
+                <button onClick={() => generateCV(lang)} className="btn-outline">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                     <polyline points="7 10 12 15 17 10" />
                     <line x1="12" y1="15" x2="12" y2="3" />
                   </svg>
-                  Télécharger CV (ATS)
+                  {lang === "fr" ? "Télécharger CV (ATS)" : "Download CV (ATS)"}
                 </button>
 
                 <Link to={cta.secondary.to} className="btn-outline">
-                  Me contacter
+                  {cta.secondary.label}
                 </Link>
               </div>
 
@@ -106,7 +113,9 @@ const Home = () => {
 
           {/* Tech Stack Banner */}
           <div className="tech-banner reveal d5">
-            <span className="tech-banner-label">Stack Technique & Compétences :</span>
+            <span className="tech-banner-label">
+              {lang === "fr" ? "Stack Technique & Compétences :" : "Tech Stack & Skills:"}
+            </span>
             <div className="tech-tags">
               {stack.map((item) => (
                 <span key={item} className="tech-tag">{item}</span>

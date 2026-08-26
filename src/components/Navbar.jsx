@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 import { generateCV } from "../utils/generateCV";
+import { useLanguage } from "../context/LanguageContext";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { lang, toggleLanguage } = useLanguage();
+
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("portfolio_theme") || "dark";
   });
@@ -31,19 +34,29 @@ const Navbar = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  const links = [
-    { to: "/", label: "Accueil" },
-    { to: "/projects", label: "Projets" },
-    { to: "/security", label: "Sécurité & OWASP" },
-    { to: "/about", label: "À propos" },
-  ];
+  const navLabels = {
+    fr: [
+      { to: "/", label: "Accueil" },
+      { to: "/projects", label: "Projets" },
+      { to: "/security", label: "Sécurité & OWASP" },
+      { to: "/about", label: "À propos" },
+    ],
+    en: [
+      { to: "/", label: "Home" },
+      { to: "/projects", label: "Projects" },
+      { to: "/security", label: "Security & OWASP" },
+      { to: "/about", label: "About" },
+    ]
+  };
+
+  const links = navLabels[lang];
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="container navbar-inner">
         <Link to="/" className="nav-logo">
           <span className="logo-name">Nanja Randriamalala</span>
-          <span className="logo-badge">Ingénieur</span>
+          <span className="logo-badge">{lang === "fr" ? "Ingénieur" : "Engineer"}</span>
         </Link>
 
         <nav className={`nav-menu ${menuOpen ? "open" : ""}`}>
@@ -57,16 +70,25 @@ const Navbar = () => {
             </Link>
           ))}
 
+          {/* Language Switcher Button */}
+          <button
+            onClick={toggleLanguage}
+            className="lang-toggle-btn"
+            title={lang === "fr" ? "Switch to English" : "Passer en Français"}
+          >
+            <span className="lang-flag">{lang === "fr" ? "🇫🇷" : "🇬🇧"}</span>
+            <span className="lang-code">{lang.toUpperCase()}</span>
+          </button>
+
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
             className="theme-toggle-btn"
             aria-label="Changer le thème"
-            title={`Passer en mode ${theme === "dark" ? "Clair ☀️" : "Sombre 🌙"}`}
+            title={`Mode ${theme === "dark" ? (lang === "fr" ? "Clair ☀️" : "Light ☀️") : (lang === "fr" ? "Sombre 🌙" : "Dark 🌙")}`}
           >
             {theme === "dark" ? (
-              // Sun icon for dark mode (click to go light)
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="5" />
                 <line x1="12" y1="1" x2="12" y2="3" />
                 <line x1="12" y1="21" x2="12" y2="23" />
@@ -78,15 +100,13 @@ const Navbar = () => {
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
             ) : (
-              // Moon icon for light mode (click to go dark)
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             )}
-            <span className="theme-toggle-label">{theme === "dark" ? "Clair" : "Sombre"}</span>
           </button>
 
-          <button onClick={generateCV} className="nav-cv-btn" title="Télécharger le CV ATS (PDF)">
+          <button onClick={() => generateCV(lang)} className="nav-cv-btn" title="CV ATS (PDF)">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
@@ -96,7 +116,7 @@ const Navbar = () => {
           </button>
 
           <Link to="/contact" className="btn-primary nav-cta">
-            Contact
+            {lang === "fr" ? "Contact" : "Contact"}
           </Link>
         </nav>
 

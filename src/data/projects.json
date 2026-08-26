@@ -1,43 +1,88 @@
 {
-  "header": {
-    "title": "Mes Projets d'Ingénierie",
-    "subtitle": "Applications web robustes, performantes et sécurisées selon les standards de l'industrie et la conformité OWASP."
-  },
-  "cta": {
-    "text": "Besoin d'un ingénieur web full stack ou d'un audit de sécurité ?",
-    "label": "Discutons de votre projet →",
-    "to": "/contact"
-  },
-  "projects": [
-    {
-      "id": 1,
-      "title": "Application de Gestion Sécurisée – UCREF",
-      "org": "Ministère de l'Environnement",
-      "description": "Ingénierie complète (Front-end & Back-end) pour la gestion centralisée des données environnementales. Architecture durcie avec protection contre le Top 10 OWASP (injection SQL, XSS, CSRF, authentification forte JWT).",
-      "image": "LogoMEDD",
-      "tech": ["React.js", "Node.js", "MySQL", "Prisma", "OWASP Hardened", "JWT"],
-      "link": "#",
-      "featured": true
+  "fr": {
+    "header": {
+      "title": "Mes Projets d'Ingénierie",
+      "subtitle": "Applications web robustes, performantes et sécurisées selon les standards de l'industrie et la conformité OWASP."
     },
-    {
-      "id": 2,
-      "title": "Plateforme Scientifique Numérique",
-      "org": "CIDST Tsimbazaza",
-      "description": "Application web de numérisation de la recherche scientifique. Système d'authentification robuste avec gestion fine des rôles et autorisations (RBAC), recherche sécurisée et assainissement des entrées utilisateur.",
-      "image": "LogoCidst",
-      "tech": ["React.js", "Express", "MySQL", "API REST", "RBAC Security"],
-      "link": "#",
-      "featured": false
+    "cta": {
+      "text": "Besoin d'un ingénieur web full stack ou d'un audit de sécurité ?",
+      "label": "Discutons de votre projet →",
+      "to": "/contact"
     },
-    {
-      "id": 3,
-      "title": "Plateforme de Voyage Responsive",
-      "org": "Projet Freelance",
-      "description": "Application de réservation de voyage interactive intégrant une géolocalisation sécurisée, filtrage dynamique et protection de formulaires contre les soumissions malveillantes.",
-      "image": null,
-      "tech": ["HTML5", "CSS3", "JavaScript ES6+", "Security Headers"],
-      "link": "#",
-      "featured": false
-    }
-  ]
+    "projects": [
+      {
+        "id": 1,
+        "title": "Application de Gestion Sécurisée – UCREF",
+        "org": "Ministère de l'Environnement",
+        "description": "Ingénierie complète (Front-end & Back-end) pour la gestion centralisée des données environnementales. Architecture durcie avec protection contre le Top 10 OWASP (injection SQL, XSS, CSRF, authentification forte JWT).",
+        "image": "LogoMEDD",
+        "tech": ["React.js", "Node.js", "MySQL", "Prisma", "OWASP Hardened", "JWT"],
+        "link": "#",
+        "featured": true
+      },
+      {
+        "id": 2,
+        "title": "Plateforme Scientifique Numérique",
+        "org": "CIDST Tsimbazaza",
+        "description": "Application web de numérisation de la recherche scientifique. Système d'authentification robuste avec gestion fine des rôles et autorisations (RBAC), recherche sécurisée et assainissement des entrées utilisateur.",
+        "image": "LogoCidst",
+        "tech": ["React.js", "Express", "MySQL", "API REST", "RBAC Security"],
+        "link": "#",
+        "featured": false
+      },
+      {
+        "id": 3,
+        "title": "Plateforme de Voyage Responsive",
+        "org": "Projet Freelance",
+        "description": "Application de réservation de voyage interactive intégrant une géolocalisation sécurisée, filtrage dynamique et protection de formulaires contre les soumissions malveillantes.",
+        "image": null,
+        "tech": ["HTML5", "CSS3", "JavaScript ES6+", "Security Headers"],
+        "link": "#",
+        "featured": false
+      }
+    ]
+  },
+  "en": {
+    "header": {
+      "title": "Engineering Projects",
+      "subtitle": "Robust, high-performance, and secure web applications built according to industry standards and OWASP compliance."
+    },
+    "cta": {
+      "text": "Need a full stack web engineer or a security audit?",
+      "label": "Let's discuss your project →",
+      "to": "/contact"
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "Secure Management System – UCREF",
+        "org": "Ministry of Environment",
+        "description": "End-to-end software engineering (Front-end & Back-end) for centralized environmental data management. Hardened architecture with OWASP Top 10 mitigation (SQL injection, XSS, CSRF, strong JWT auth).",
+        "image": "LogoMEDD",
+        "tech": ["React.js", "Node.js", "MySQL", "Prisma", "OWASP Hardened", "JWT"],
+        "link": "#",
+        "featured": true
+      },
+      {
+        "id": 2,
+        "title": "Digital Scientific Platform",
+        "org": "CIDST Tsimbazaza",
+        "description": "Web application for digitizing scientific research publications. Robust authentication system with granular Role-Based Access Control (RBAC), secure search, and input sanitization.",
+        "image": "LogoCidst",
+        "tech": ["React.js", "Express", "MySQL", "REST API", "RBAC Security"],
+        "link": "#",
+        "featured": false
+      },
+      {
+        "id": 3,
+        "title": "Responsive Travel Booking Platform",
+        "org": "Freelance Project",
+        "description": "Interactive travel booking application featuring secure geolocation, dynamic filtering, and form protection against malicious submissions.",
+        "image": null,
+        "tech": ["HTML5", "CSS3", "JavaScript ES6+", "Security Headers"],
+        "link": "#",
+        "featured": false
+      }
+    ]
+  }
 }

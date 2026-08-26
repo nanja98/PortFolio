@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { LanguageProvider } from "./context/LanguageContext";
 import Home from './pages/Accueil';
 import Projects from './pages/Projet';
 import Security from './pages/Security';
@@ -29,17 +30,19 @@ function RevealObserver() {
 
 function App() {
   return (
-    <Router>
-      <RevealObserver />
-      <SocialSidebar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/security" element={<Security />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <RevealObserver />
+        <SocialSidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/security" element={<Security />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </LanguageProvider>
   );
 }
 

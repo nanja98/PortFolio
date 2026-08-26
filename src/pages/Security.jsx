@@ -4,9 +4,14 @@ import "../styles/Security.css";
 import Navbar from "../components/Navbar";
 import securityData from "../data/security.json";
 import { generateCV } from "../utils/generateCV";
+import { useLanguage } from "../context/LanguageContext";
 
 const Security = () => {
-  const { header, owaspTop10, securityChecklist } = securityData;
+  const { lang } = useLanguage();
+  const data = securityData[lang] || securityData.fr;
+
+  const { header, owaspTop10, securityChecklist } = data;
+
   const [activeItem, setActiveItem] = useState(0);
   const [checkedItems, setCheckedItems] = useState({});
 
@@ -22,14 +27,16 @@ const Security = () => {
 
           {/* Header */}
           <div className="security-page-header reveal">
-            <span className="section-tag">Cyber-Sécurité Web & OWASP</span>
-            <h1 className="security-page-title gradient-text">{header.title}</h1>
-            <p className="security-page-subtitle">{header.subtitle}</p>
+            <span className="section-tag">{lang === "fr" ? "Cyber-Sécurité Web & OWASP" : "Web Cyber-Security & OWASP"}</span>
+            <h1 className="section-title">{header.title}</h1>
+            <p className="section-subtitle">{header.subtitle}</p>
           </div>
 
           {/* Interactive OWASP Top 10 Showcase */}
           <div className="owasp-showcase reveal d1">
-            <h2 className="section-heading">Mitigation des vulnérabilités OWASP Top 10</h2>
+            <h2 className="section-heading">
+              {lang === "fr" ? "Mitigation des vulnérabilités OWASP Top 10" : "OWASP Top 10 Vulnerability Mitigation"}
+            </h2>
             
             <div className="owasp-layout">
               {/* Left sidebar: Code list */}
@@ -42,7 +49,7 @@ const Security = () => {
                   >
                     <span className="owasp-code">{item.code}</span>
                     <span className="owasp-name">{item.title}</span>
-                    <span className={`owasp-badge ${item.risk === "Critique" ? "danger" : "warning"}`}>
+                    <span className={`owasp-badge ${item.risk === "Critique" || item.risk === "Critical" ? "danger" : "warning"}`}>
                       {item.risk}
                     </span>
                   </button>
@@ -57,12 +64,12 @@ const Security = () => {
                 </div>
 
                 <div className="details-block">
-                  <h4>⚠️ Menace / Risque</h4>
+                  <h4>⚠️ {lang === "fr" ? "Menace / Risque" : "Threat / Risk"}</h4>
                   <p>{owaspTop10[activeItem].description}</p>
                 </div>
 
                 <div className="details-block mitigation">
-                  <h4>🛡️ Stratégie de Sécurisation (Implémentée par Nanja)</h4>
+                  <h4>🛡️ {lang === "fr" ? "Stratégie de Sécurisation (Implémentée par Nanja)" : "Hardening Strategy (Engineered by Nanja)"}</h4>
                   <p>{owaspTop10[activeItem].mitigation}</p>
                 </div>
               </div>
@@ -72,10 +79,14 @@ const Security = () => {
           {/* Interactive Audit Checklist */}
           <div className="checklist-section reveal d2">
             <div className="checklist-header">
-              <span className="section-tag">Audit de Sécurité</span>
-              <h2 className="section-heading">Checklist de Sécurisation d'une Application Web</h2>
+              <span className="section-tag">{lang === "fr" ? "Audit de Sécurité" : "Security Audit"}</span>
+              <h2 className="section-heading">
+                {lang === "fr" ? "Checklist de Sécurisation d'une Application Web" : "Web Application Hardening Checklist"}
+              </h2>
               <p className="checklist-subtitle">
-                Standards appliqués par Nanja sur chaque projet pour garantir zéro vulnérabilité critique.
+                {lang === "fr"
+                  ? "Standards appliqués par Nanja sur chaque projet pour garantir zéro vulnérabilité critique."
+                  : "Standards enforced by Nanja on every engineering project to eliminate critical vulnerabilities."}
               </p>
             </div>
 
@@ -100,13 +111,23 @@ const Security = () => {
 
           {/* CTA Box */}
           <div className="security-cta reveal d3">
-            <h3>Besoin de sécuriser votre application web ou d'un audit OWASP ?</h3>
+            <h3>
+              {lang === "fr"
+                ? "Besoin de sécuriser votre application web ou d'un audit OWASP ?"
+                : "Need to secure your web application or an OWASP audit?"}
+            </h3>
             <p>
-              Je vous accompagne dans l'architecture sécurisée, la revue de code et la correction des failles.
+              {lang === "fr"
+                ? "Je vous accompagne dans l'architecture sécurisée, la revue de code et la correction des failles."
+                : "I assist you with secure architecture, code reviews, and vulnerability remediation."}
             </p>
             <div className="security-cta-actions">
-              <Link to="/contact" className="btn-primary">Demander un audit / projet</Link>
-              <button onClick={generateCV} className="btn-outline">Télécharger mon CV d'Ingénieur (ATS)</button>
+              <Link to="/contact" className="btn-primary">
+                {lang === "fr" ? "Demander un audit / projet" : "Request an Audit / Project"}
+              </Link>
+              <button onClick={() => generateCV(lang)} className="btn-outline">
+                {lang === "fr" ? "Télécharger mon CV d'Ingénieur (ATS)" : "Download Engineer CV (ATS)"}
+              </button>
             </div>
           </div>
 

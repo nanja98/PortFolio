@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../styles/Contact.css";
 import Navbar from "../components/Navbar";
 import contactData from "../data/contact.json";
+import { useLanguage } from "../context/LanguageContext";
 
-// SVG icons keyed by social type
 const icons = {
   linkedin: (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -30,7 +30,11 @@ const icons = {
 };
 
 const Contact = () => {
-  const { header, availability, socials } = contactData;
+  const { lang } = useLanguage();
+  const data = contactData[lang] || contactData.fr;
+
+  const { header, info, form } = data;
+
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
 
@@ -53,77 +57,66 @@ const Contact = () => {
         <div className="container">
 
           <div className="contact-header reveal">
-            <span className="section-tag">Contact</span>
-            <h1 className="contact-title gradient-text">{header.title}</h1>
-            <p className="contact-subtitle">{header.subtitle}</p>
+            <span className="section-tag">{lang === "fr" ? "Contact" : "Get in Touch"}</span>
+            <h1 className="section-title">{header.title}</h1>
+            <p className="section-subtitle">{header.subtitle}</p>
           </div>
 
           <div className="contact-layout">
 
-            {/* ── Info panel ── */}
-            <div className="contact-info reveal-left d1">
-              <h2 className="info-heading">Me retrouver sur</h2>
+            {/* Info panel */}
+            <div className="contact-info reveal d1">
+              <h2 className="info-heading">{lang === "fr" ? "Informations & Réseaux" : "Contact Info & Profiles"}</h2>
 
               <div className="socials-list">
-                {socials.map((s) => (
+                {info.map((item) => (
                   <a
-                    key={s.label}
-                    href={s.href}
+                    key={item.label}
+                    href={item.href}
                     target="_blank"
                     rel="noreferrer"
                     className="social-item"
                   >
-                    <div className="social-icon">{icons[s.type]}</div>
+                    <div className="social-icon">{icons[item.type] || item.icon}</div>
                     <div className="social-text">
-                      <span className="social-label">{s.label}</span>
-                      <span className="social-handle">{s.handle}</span>
+                      <span className="social-label">{item.label}</span>
+                      <span className="social-handle">{item.value}</span>
                     </div>
-                    <svg className="social-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
                   </a>
                 ))}
               </div>
-
-              <div className="availability-card">
-                <div className="avail-dot" />
-                <div>
-                  <strong>{availability.label}</strong>
-                  <span>{availability.detail}</span>
-                </div>
-              </div>
             </div>
 
-            {/* ── Form ── */}
-            <div className="contact-form-wrapper reveal-right d2">
+            {/* Form */}
+            <div className="contact-form-wrapper reveal d2">
               {sent ? (
                 <div className="form-success">
                   <div className="success-icon">✓</div>
-                  <h3>Message envoyé !</h3>
-                  <p>Je vous répondrai dans les plus brefs délais.</p>
+                  <h3>{lang === "fr" ? "Message envoyé !" : "Message sent!"}</h3>
+                  <p>{lang === "fr" ? "Je vous répondrai dans les plus brefs délais." : "I will reply to you as soon as possible."}</p>
                 </div>
               ) : (
                 <form className="contact-form" onSubmit={handleSubmit}>
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="name">Votre nom</label>
-                      <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Jean Dupont" required />
+                      <label htmlFor="name">{form.name}</label>
+                      <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} required />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="email">Email</label>
-                      <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="jean@exemple.com" required />
+                      <label htmlFor="email">{form.email}</label>
+                      <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} required />
                     </div>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="subject">Sujet</label>
-                    <input id="subject" type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Proposition de projet..." />
+                    <label htmlFor="subject">{form.subject}</label>
+                    <input id="subject" type="text" name="subject" value={formData.subject} onChange={handleChange} />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message" rows="5" value={formData.message} onChange={handleChange} placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+                    <label htmlFor="message">{form.message}</label>
+                    <textarea id="message" name="message" rows="5" value={formData.message} onChange={handleChange} required></textarea>
                   </div>
                   <button type="submit" className="btn-primary form-submit">
-                    Envoyer le message
+                    {form.submit}
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <line x1="22" y1="2" x2="11" y2="13"/>
                       <polygon points="22 2 15 22 11 13 2 9 22 2"/>

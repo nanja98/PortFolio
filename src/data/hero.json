@@ -1,21 +1,42 @@
 {
-  "name": "Nanja Randriamalala",
-  "badge": "Ingénieur en Informatique & Télécoms",
-  "roles": [
-    "Ingénieur Développeur Web Full Stack",
-    "Expert Sécurité Web & OWASP",
-    "Architecte Solutions React & Node.js",
-    "Spécialiste API REST & Bases de Données"
-  ],
-  "description": "Ingénieur diplômé en Informatique & Télécommunications. Spécialisé dans la conception d'applications web hautement sécurisées, robustes et performantes, intégrant les meilleures pratiques OWASP et une architecture logicielle moderne.",
-  "stack": ["React.js", "Node.js", "TypeScript", "OWASP Security", "MySQL", "Prisma", "Express", "Docker", "Figma"],
-  "stats": [
-    { "value": "Ingénieur", "label": "M2 ISPM Diplômé" },
-    { "value": "OWASP", "label": "Sécurité Web Avancée" },
-    { "value": "10+", "label": "Projets Déployés" }
-  ],
-  "cta": {
-    "primary": { "label": "Découvrir mes projets", "to": "/projects" },
-    "secondary": { "label": "Me contacter", "to": "/contact" }
+  "fr": {
+    "name": "Nanja Randriamalala",
+    "badge": "Ingénieur en Informatique & Télécoms",
+    "roles": [
+      "Ingénieur Développeur Web Full Stack",
+      "Expert Sécurité Web & OWASP",
+      "Architecte Solutions React & Node.js"
+    ],
+    "description": "Ingénieur diplômé en Informatique & Télécommunications (ISPM). Spécialisé dans la conception d'applications web hautement sécurisées, robustes et performantes, intégrant les meilleures pratiques OWASP et une architecture logicielle moderne.",
+    "stack": ["React.js", "Node.js", "TypeScript", "OWASP Security", "MySQL", "Prisma", "Express", "Docker", "Figma"],
+    "stats": [
+      { "value": "Ingénieur", "label": "M2 ISPM Diplômé" },
+      { "value": "OWASP", "label": "Sécurité Web Avancée" },
+      { "value": "10+", "label": "Projets Déployés" }
+    ],
+    "cta": {
+      "primary": { "label": "Découvrir mes projets", "to": "/projects" },
+      "secondary": { "label": "Me contacter", "to": "/contact" }
+    }
+  },
+  "en": {
+    "name": "Nanja Randriamalala",
+    "badge": "Software & Telecom Engineer",
+    "roles": [
+      "Full Stack Web Engineer",
+      "OWASP Web Security Expert",
+      "React & Node.js Solutions Architect"
+    ],
+    "description": "Software & Telecommunications Engineering Graduate (ISPM). Specialized in designing highly secure, robust, and scalable web applications incorporating OWASP best practices and modern software architecture.",
+    "stack": ["React.js", "Node.js", "TypeScript", "OWASP Security", "MySQL", "Prisma", "Express", "Docker", "Figma"],
+    "stats": [
+      { "value": "Engineer", "label": "M2 ISPM Degree" },
+      { "value": "OWASP", "label": "Web Security Expert" },
+      { "value": "10+", "label": "Projects Shipped" }
+    ],
+    "cta": {
+      "primary": { "label": "View my projects", "to": "/projects" },
+      "secondary": { "label": "Contact me", "to": "/contact" }
+    }
   }
 }

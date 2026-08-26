@@ -1,36 +1,102 @@
 {
-  "header": {
-    "title": "Travaillons ensemble",
-    "subtitle": "Disponible pour des missions freelance, des collaborations ou toute discussion autour d'un projet web ambitieux."
-  },
-  "availability": {
-    "label": "Disponible actuellement",
-    "detail": "Pour des missions freelance ou CDI à Madagascar"
-  },
-  "socials": [
-    {
-      "label": "LinkedIn",
-      "handle": "nanja-randriamalala",
-      "href": "https://www.linkedin.com/in/nanja-randriamalala/",
-      "type": "linkedin"
+  "fr": {
+    "header": {
+      "title": "Contactez-moi",
+      "subtitle": "Un projet web, un besoin d'audit de sécurité OWASP ou une opportunité d'ingénierie ? Écrivez-moi !"
     },
-    {
-      "label": "GitHub",
-      "handle": "nanja98",
-      "href": "https://github.com/nanja98",
-      "type": "github"
-    },
-    {
-      "label": "Email",
-      "handle": "nanjarandriamalala98@gmail.com",
-      "href": "mailto:nanjarandriamalala98@gmail.com",
-      "type": "email"
-    },
-    {
-      "label": "Téléphone",
-      "handle": "+261 34 54 264 33",
-      "href": "tel:+261345426433",
-      "type": "phone"
+    "info": [
+      {
+        "type": "email",
+        "label": "Email",
+        "value": "nanjarandriamalala98@gmail.com",
+        "href": "mailto:nanjarandriamalala98@gmail.com",
+        "icon": "✉️"
+      },
+      {
+        "type": "phone",
+        "label": "Téléphone",
+        "value": "+261 34 54 264 33",
+        "href": "tel:+261345426433",
+        "icon": "📞"
+      },
+      {
+        "type": "location",
+        "label": "Localisation",
+        "value": "Antananarivo, Madagascar (Disponible Remote)",
+        "href": "#",
+        "icon": "📍"
+      }
+    ],
+    "socials": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "value": "github.com/nanja98",
+        "href": "https://github.com/nanja98"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/nanja-randriamalala",
+        "href": "https://linkedin.com/in/nanja-randriamalala"
+      }
+    ],
+    "form": {
+      "name": "Votre nom",
+      "email": "Votre email",
+      "subject": "Sujet",
+      "message": "Votre message...",
+      "submit": "Envoyer le message"
     }
-  ]
+  },
+  "en": {
+    "header": {
+      "title": "Contact Me",
+      "subtitle": "Have a web project, need an OWASP security audit, or an engineering opportunity? Reach out!"
+    },
+    "info": [
+      {
+        "type": "email",
+        "label": "Email",
+        "value": "nanjarandriamalala98@gmail.com",
+        "href": "mailto:nanjarandriamalala98@gmail.com",
+        "icon": "✉️"
+      },
+      {
+        "type": "phone",
+        "label": "Phone",
+        "value": "+261 34 54 264 33",
+        "href": "tel:+261345426433",
+        "icon": "📞"
+      },
+      {
+        "type": "location",
+        "label": "Location",
+        "value": "Antananarivo, Madagascar (Available Remote)",
+        "href": "#",
+        "icon": "📍"
+      }
+    ],
+    "socials": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "value": "github.com/nanja98",
+        "href": "https://github.com/nanja98"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "value": "linkedin.com/in/nanja-randriamalala",
+        "href": "https://linkedin.com/in/nanja-randriamalala"
+      }
+    ],
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "subject": "Subject",
+      "message": "Your message...",
+      "submit": "Send Message"
+    }
+  }
 }
