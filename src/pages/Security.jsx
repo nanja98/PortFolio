@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import securityData from "../data/security.json";
 import { generateCV } from "../utils/generateCV";
 import { useLanguage } from "../context/LanguageContext";
+import SecuritySimulator from "../components/SecuritySimulator";
 
 const Security = () => {
   const { lang } = useLanguage();
@@ -76,8 +77,13 @@ const Security = () => {
             </div>
           </div>
 
+          {/* Interactive Hardening Cyber Attack Simulator Lab */}
+          <div className="reveal d2">
+            <SecuritySimulator />
+          </div>
+
           {/* Interactive Audit Checklist */}
-          <div className="checklist-section reveal d2">
+          <div className="checklist-section reveal d3" style={{ marginTop: "56px" }}>
             <div className="checklist-header">
               <span className="section-tag">{lang === "fr" ? "Audit de Sécurité" : "Security Audit"}</span>
               <h2 className="section-heading">
@@ -110,7 +116,7 @@ const Security = () => {
           </div>
 
           {/* CTA Box */}
-          <div className="security-cta reveal d3">
+          <div className="security-cta reveal d4">
             <h3>
               {lang === "fr"
                 ? "Besoin de sécuriser votre application web ou d'un audit OWASP ?"
