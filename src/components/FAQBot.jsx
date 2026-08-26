@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/FAQBot.css";
 import faqData from "../data/faqBot.json";
 import { useLanguage } from "../context/LanguageContext";
+import { generateAIResponse } from "../utils/aiEngine";
 
 const FAQBot = () => {
   const { lang } = useLanguage();
@@ -24,23 +25,6 @@ const FAQBot = () => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
 
-  const findAnswer = (query) => {
-    const q = query.toLowerCase();
-    if (q.includes("compétence") || q.includes("skill") || q.includes("stack") || q.includes("techno")) {
-      return data.answers.skills;
-    }
-    if (q.includes("diplôme") || q.includes("degree") || q.includes("formation") || q.includes("ispm") || q.includes("étude")) {
-      return data.answers.degree;
-    }
-    if (q.includes("freelance") || q.includes("remote") || q.includes("disponib") || q.includes("hire") || q.includes("recrute")) {
-      return data.answers.freelance;
-    }
-    if (q.includes("audit") || q.includes("owasp") || q.includes("devis") || q.includes("tarif") || q.includes("prix") || q.includes("quote") || q.includes("contact")) {
-      return data.answers.audit;
-    }
-    return data.answers.default;
-  };
-
   const handleSend = (textToSend) => {
     const text = textToSend || input.trim();
     if (!text) return;
@@ -51,15 +35,15 @@ const FAQBot = () => {
     setInput("");
     setIsTyping(true);
 
-    // Simulate Bot thinking & typing
+    // Simulate Generative AI Processing & Response Generation
     setTimeout(() => {
-      const botResponse = findAnswer(text);
+      const botResponse = generateAIResponse(text, lang);
       setMessages((prev) => [
         ...prev,
         { sender: "bot", text: botResponse, id: Date.now() + 1 }
       ]);
       setIsTyping(false);
-    }, 600);
+    }, 450);
   };
 
   const handleQuickClick = (question) => {
@@ -72,12 +56,12 @@ const FAQBot = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`faq-trigger-btn ${isOpen ? "active" : ""}`}
-        aria-label="Assistant virtuel Nanja"
-        title={lang === "fr" ? "Assistant d'Ingénieur Nanja" : "Nanja Engineer Assistant"}
+        aria-label="Assistant IA Nanja"
+        title={lang === "fr" ? "Assistant IA Nanja" : "Nanja AI Assistant"}
       >
-        <span className="faq-trigger-icon">💬</span>
+        <span className="faq-trigger-icon">✨</span>
         <span className="faq-trigger-text">
-          {isOpen ? (lang === "fr" ? "Fermer" : "Close") : (lang === "fr" ? "Assistant FAQ" : "FAQ Bot")}
+          {isOpen ? (lang === "fr" ? "Fermer" : "Close") : (lang === "fr" ? "Assistant IA" : "AI Assistant")}
         </span>
       </button>
 
@@ -87,10 +71,12 @@ const FAQBot = () => {
           {/* Header */}
           <div className="faq-chat-header">
             <div className="faq-header-info">
-              <div className="faq-avatar">NR</div>
+              <div className="faq-avatar">AI</div>
               <div>
-                <h4 className="faq-bot-name">Assistant Nanja</h4>
-                <span className="faq-bot-status">● {lang === "fr" ? "Ingénieur Web Bot" : "Engineer Web Bot"}</span>
+                <h4 className="faq-bot-name">Nanja AI Agent</h4>
+                <span className="faq-bot-status">
+                  <span className="online-dot" /> {lang === "fr" ? "IA d'Ingénieur Active" : "Engineer AI Active"}
+                </span>
               </div>
             </div>
             <button className="faq-close-btn" onClick={() => setIsOpen(false)}>✕</button>
@@ -101,9 +87,13 @@ const FAQBot = () => {
             {messages.map((msg) => (
               <div key={msg.id} className={`faq-msg ${msg.sender}`}>
                 <div className="faq-msg-bubble">
-                  {msg.text.split("**").map((part, i) =>
-                    i % 2 === 1 ? <strong key={i}>{part}</strong> : part
-                  )}
+                  {msg.text.split("\n").map((line, lineIdx) => (
+                    <p key={lineIdx} style={{ margin: lineIdx > 0 ? "4px 0 0" : "0" }}>
+                      {line.split("**").map((part, i) =>
+                        i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+                      )}
+                    </p>
+                  ))}
                 </div>
               </div>
             ))}
