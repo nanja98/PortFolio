@@ -12,6 +12,16 @@
     "projects": [
       {
         "id": 1,
+        "title": "Portfolio d'Ingénieur Sécurisé & Assistant IA",
+        "org": "Projet Personnel & Open Source",
+        "description": "Portfolio web haute performance modernisé avec architecture bilingue (FR/EN), système de thèmes Dark/Light, assistant virtuel alimenté par moteur IA NLP, laboratoire de simulation de sécurité OWASP et conformité ATS.",
+        "image": null,
+        "tech": ["React.js", "AI Engine (NLP)", "OWASP Security Lab", "i18n (FR/EN)", "ATS CV System"],
+        "link": "#",
+        "featured": true
+      },
+      {
+        "id": 2,
         "title": "Application de Gestion Sécurisée – UCREF",
         "org": "Ministère de l'Environnement",
         "description": "Ingénierie complète (Front-end & Back-end) pour la gestion centralisée des données environnementales. Architecture durcie avec protection contre le Top 10 OWASP (injection SQL, XSS, CSRF, authentification forte JWT).",
@@ -21,7 +31,7 @@
         "featured": true
       },
       {
-        "id": 2,
+        "id": 3,
         "title": "Plateforme Scientifique Numérique",
         "org": "CIDST Tsimbazaza",
         "description": "Application web de numérisation de la recherche scientifique. Système d'authentification robuste avec gestion fine des rôles et autorisations (RBAC), recherche sécurisée et assainissement des entrées utilisateur.",
@@ -31,7 +41,7 @@
         "featured": false
       },
       {
-        "id": 3,
+        "id": 4,
         "title": "Plateforme de Voyage Responsive",
         "org": "Projet Freelance",
         "description": "Application de réservation de voyage interactive intégrant une géolocalisation sécurisée, filtrage dynamique et protection de formulaires contre les soumissions malveillantes.",
@@ -55,6 +65,16 @@
     "projects": [
       {
         "id": 1,
+        "title": "Secured Engineer Portfolio & AI Assistant",
+        "org": "Personal & Open Source Project",
+        "description": "High-performance modern engineer portfolio featuring bilingual i18n (FR/EN), dark/light mode, custom NLP AI Assistant Bot, interactive OWASP hardening lab simulator, and ATS CV exporter.",
+        "image": null,
+        "tech": ["React.js", "AI Engine (NLP)", "OWASP Security Lab", "i18n (FR/EN)", "ATS CV System"],
+        "link": "#",
+        "featured": true
+      },
+      {
+        "id": 2,
         "title": "Secure Management System – UCREF",
         "org": "Ministry of Environment",
         "description": "End-to-end software engineering (Front-end & Back-end) for centralized environmental data management. Hardened architecture with OWASP Top 10 mitigation (SQL injection, XSS, CSRF, strong JWT auth).",
@@ -64,7 +84,7 @@
         "featured": true
       },
       {
-        "id": 2,
+        "id": 3,
         "title": "Digital Scientific Platform",
         "org": "CIDST Tsimbazaza",
         "description": "Web application for digitizing scientific research publications. Robust authentication system with granular Role-Based Access Control (RBAC), secure search, and input sanitization.",
@@ -74,7 +94,7 @@
         "featured": false
       },
       {
-        "id": 3,
+        "id": 4,
         "title": "Responsive Travel Booking Platform",
         "org": "Freelance Project",
         "description": "Interactive travel booking application featuring secure geolocation, dynamic filtering, and form protection against malicious submissions.",
