@@ -89,35 +89,93 @@
   color: var(--text-primary);
 }
 
-/* Aside Profile Frame */
+/* Aside Profile Badge Card */
 .hero-aside {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.profile-frame {
-  width: 100%;
-  aspect-ratio: 4/5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+.engineer-profile-card {
   background: var(--bg-surface);
   border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  position: relative;
 }
 
-.profile-image {
+.engineer-profile-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.profile-avatar-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 18px;
+}
+
+.profile-avatar-image {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   object-fit: cover;
-  filter: grayscale(15%) contrast(105%);
-  transition: var(--transition);
+  border: 3px solid var(--bg-surface);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  filter: contrast(102%);
 }
 
-.profile-frame:hover .profile-image {
-  filter: grayscale(0%) contrast(100%);
+.avatar-status-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0.85;
+  pointer-events: none;
 }
 
+.profile-card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.profile-card-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.profile-card-role {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.profile-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-full);
+}
+
+/* Metrics Grid */
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -157,6 +215,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  box-shadow: var(--card-shadow);
 }
 
 .tech-banner-label {

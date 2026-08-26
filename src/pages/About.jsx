@@ -33,10 +33,14 @@ const About = () => {
           {/* Bio Grid */}
           <div className="bio-grid">
             <div className="bio-photo-card reveal d1">
-              <img src={Profile} alt={name} className="bio-photo" />
+              <div className="bio-avatar-wrapper">
+                <img src={Profile} alt={name} className="bio-photo" />
+                <div className="bio-status-ring" />
+              </div>
               <div className="bio-photo-meta">
-                <strong>{degree}</strong>
-                <span>{school}</span>
+                <strong>{name}</strong>
+                <span className="bio-degree-badge">✓ {degree}</span>
+                <span className="bio-school-text">{school}</span>
               </div>
             </div>
 

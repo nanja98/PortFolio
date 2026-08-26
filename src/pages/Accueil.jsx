@@ -93,10 +93,23 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Profile Frame & Quick Stats */}
+            {/* Right Profile Badge Card & Quick Stats */}
             <div className="hero-aside reveal d2">
-              <div className="profile-frame">
-                <img src={profileImg} alt={name} className="profile-image" />
+              <div className="engineer-profile-card">
+                <div className="profile-avatar-container">
+                  <img src={profileImg} alt={name} className="profile-avatar-image" />
+                  <div className="avatar-status-ring" />
+                </div>
+                
+                <div className="profile-card-details">
+                  <div className="profile-card-name">{name}</div>
+                  <div className="profile-card-role">
+                    {lang === "fr" ? "Ingénieur Web & Sécurité" : "Web & Security Engineer"}
+                  </div>
+                  <div className="profile-card-badge">
+                    <span>✓</span> {lang === "fr" ? "Diplômé ISPM (M2)" : "ISPM Graduate (M2)"}
+                  </div>
+                </div>
               </div>
 
               <div className="metrics-grid">
