@@ -1,36 +1,26 @@
 {
   "fr": {
-    "welcome": "Bonjour ! Je suis l'assistant virtuel de Nanja. Posez-moi une question sur ses compétences d'ingénieur, son parcours ou ses prestations.",
-    "placeholder": "Posez une question...",
+    "welcome": "Bonjour ! Je suis l'IA d'Assistance de Nanja. Posez-moi vos questions sur sa localisation, ses compétences d'ingénieur, son diplôme ou ses tarifs.",
+    "placeholder": "Posez une question à l'IA...",
     "quickQuestions": [
+      "Quelle est ton adresse / localisation ?",
       "Quelles sont tes compétences ?",
       "Quel est ton diplôme ?",
+      "Quels sont tes tarifs & délais ?",
       "Es-tu disponible en Remote / Freelance ?",
       "Comment demander un audit OWASP ?"
-    ],
-    "answers": {
-      "skills": "Nanja est **Ingénieur Développeur Full Stack & Sécurité**. Ses technologies clés sont **React, Node.js, Express, PostgreSQL, MongoDB, Git** et la conformité **OWASP ASVS** (Input sanitization, JWT HttpOnly, Rate limiting).",
-      "degree": "Il est titulaire d'un **Diplôme d'Ingénieur (Master 2 en Informatique)** délivré par l'**ISPM** (Institut Supérieur Polytechnique de Madagascar).",
-      "freelance": "Oui ! Nanja est disponible pour des contrats en **Freelance international (Europe & Worldwide)** et des missions en **Remote** en développement web et audit de sécurité.",
-      "audit": "Pour demander un audit de sécurité ou discuter d'un projet, vous pouvez envoyer un message via la page **Contact** ou écrire directement à **nanjarandriamalala98@gmail.com**.",
-      "default": "Je n'ai pas la réponse exacte à cette question. N'hésitez pas à contacter directement Nanja via la page Contact ou par email à nanjarandriamalala98@gmail.com !"
-    }
+    ]
   },
   "en": {
-    "welcome": "Hello! I am Nanja's virtual assistant. Ask me anything about his engineering skills, background, or availability.",
-    "placeholder": "Ask a question...",
+    "welcome": "Hello! I am Nanja's AI Assistant Agent. Ask me anything about his location, engineering skills, degree, or rates.",
+    "placeholder": "Ask the AI a question...",
     "quickQuestions": [
+      "Where are you located / address?",
       "What are your core skills?",
       "What is your degree?",
+      "What are your rates & timelines?",
       "Are you available for Remote / Freelance?",
       "How to request an OWASP audit?"
-    ],
-    "answers": {
-      "skills": "Nanja is a **Full Stack Web & Security Engineer**. His main stack includes **React, Node.js, Express, PostgreSQL, MongoDB, Git** and **OWASP ASVS** security compliance (Input sanitization, JWT HttpOnly, Rate limiting).",
-      "degree": "He holds a **Master 2 Engineer Degree in Computer Science** from **ISPM** (Institut Supérieur Polytechnique de Madagascar).",
-      "freelance": "Yes! Nanja is available for **International Freelance contracts** and **Remote engineering roles** worldwide.",
-      "audit": "To request an OWASP security audit or discuss a project, feel free to use the **Contact page** or send an email directly to **nanjarandriamalala98@gmail.com**.",
-      "default": "I don't have the exact answer to that question. Feel free to contact Nanja directly via the Contact page or email at nanjarandriamalala98@gmail.com!"
-    }
+    ]
   }
 }
