@@ -1,12 +1,16 @@
 import React from "react";
 import "../styles/SocialSidebar.css";
 import contactData from "../data/contact.json";
+import { useLanguage } from "../context/LanguageContext";
 
-// Only show GitHub and LinkedIn in the sidebar
 const ALLOWED = ["github", "linkedin"];
 
 const SocialSidebar = () => {
-  const links = contactData.socials.filter((s) => ALLOWED.includes(s.type));
+  const { lang } = useLanguage();
+  const data = contactData[lang] || contactData.fr;
+  const socials = data?.socials || [];
+
+  const links = socials.filter((s) => ALLOWED.includes(s.type));
 
   return (
     <aside className="social-sidebar">
