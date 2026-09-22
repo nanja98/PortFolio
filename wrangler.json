@@ -2,5 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "nanja",
   "compatibility_date": "2025-10-14",
-  "pages_build_output_dir": "./build"
+  "pages_build_output_dir": "./build",
+  "build": {
+    "command": "npm run build"
+  }
 }
